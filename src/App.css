@@ -1,5 +1,13 @@
-header{
-  height: 80px;
-  background: rgba(151, 154, 157, 0.582);
-  margin-bottom: 30px;
+html {
+  overflow:hidden;
+  height:100%;
+}
+
+body {
+  height:100%;
+  overflow:auto;
+}
+
+.App {
+  height: 200vh;
 }

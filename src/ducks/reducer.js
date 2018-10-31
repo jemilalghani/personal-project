@@ -12,6 +12,7 @@ function reducer(state = INITIAL_STATE, action){
     }
 }
 export function changeColor(color){
+    sessionStorage.setItem('color', color)
     return {
         type: UPDATE_COLOR,
         payload: color

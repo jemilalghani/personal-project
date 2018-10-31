@@ -25,6 +25,7 @@ class ColorTheme extends Component{
         const {changeColor} = this.props
         return (
             <div>
+                <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"></link>
                 <div className="themeOne">
                     <button id="color-one" onClick={()=>changeColor('rgb(245,181,107)')} 
                     onMouseOver={this.toggle1} onMouseLeave={this.toggle1}>1</button>
@@ -40,12 +41,12 @@ class ColorTheme extends Component{
                     onMouseOver={this.toggle6} onMouseLeave={this.toggle6}>6</button>
                 </div>
                 <div className="Emotions">
-                    <p className={this.state.toggle1? 'show':''}> Joyful, Happy, Relaxed, Great, Content</p>
-                    <p className={this.state.toggle2? 'show':''}> Productive, Energetic, Active, Motivated</p>
-                    <p className={this.state.toggle3? 'show':''}> Average, Normal, Uneventful, Good</p>
-                    <p className={this.state.toggle4? 'show':''}> Sick, Tired, Lazy, Bored, Unmotivated</p>
-                    <p className={this.state.toggle5? 'show':''}> Sad, Lonely, Insecure, Numb</p>
-                    <p className={this.state.toggle6? 'show':''}> Angry, Anxious, Frustrated, Grumpy</p>
+                    <p className={this.state.toggle1? 'show':''}> Joyful   Happy   Relaxed   Great   Content</p>
+                    <p className={this.state.toggle2? 'show':''}> Productive   Energetic   Active   Motivated</p>
+                    <p className={this.state.toggle3? 'show':''}> Average   Normal   Uneventful   Good</p>
+                    <p className={this.state.toggle4? 'show':''}> Sick   Tired   Lazy   Bored   Unmotivated</p>
+                    <p className={this.state.toggle5? 'show':''}> Sad   Lonely   Insecure   Numb</p>
+                    <p className={this.state.toggle6? 'show':''}> Angry   Anxious   Frustrated   Grumpy</p>
                 </div>
 
             </div>

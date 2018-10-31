@@ -22,6 +22,7 @@ class Calendar extends Component {
                 return <div style={init} className={`day-${item}`}></div>
             }
         })  
+        console.log(this.props.color);
         return (
            <div className="Calendar">
                 <div className='box'>

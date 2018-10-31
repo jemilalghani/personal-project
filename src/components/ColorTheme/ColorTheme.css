@@ -3,6 +3,8 @@
 }
 .Emotions .show{
     display:flex;
+    justify-content: center;
+    font-family: 'VT323', monospace;
 }
 .themeOne{
     max-width: 400px;
@@ -14,6 +16,7 @@
     border: none;
     padding: 15px 25px;
     color: white;
+    outline: none;
 }
 .themeOne #color-one{
     background-color: rgb(245,181,107);
