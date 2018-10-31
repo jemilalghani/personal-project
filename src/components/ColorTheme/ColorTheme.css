@@ -1,0 +1,35 @@
+.Emotions p{
+    display:none;
+}
+.Emotions .show{
+    display:flex;
+}
+.themeOne{
+    max-width: 400px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+  }
+.themeOne button{
+    border: none;
+    padding: 15px 25px;
+    color: white;
+}
+.themeOne #color-one{
+    background-color: rgb(245,181,107);
+}
+.themeOne #color-two{
+    background-color: rgb(220,108,120);
+}
+.themeOne #color-three{
+    background-color: rgb(67,89,148);
+}
+.themeOne #color-four{
+    background-color: rgb(165,100,120);
+}
+.themeOne #color-five{
+    background-color: rgb(96,85,110);
+}
+.themeOne #color-six{
+    background-color: rgb(170,43,34);
+}

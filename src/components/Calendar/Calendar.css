@@ -1,0 +1,16 @@
+.Calendar{
+    max-width: 700px;
+    margin: 0 auto;
+}
+.Calendar .box{
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));  
+}
+.Calendar .box>div{
+    height: 20px;
+    width: 20px;
+    margin: 5px 5px;
+    border: solid rgba(128, 128, 128, 0.651) 1px;
+    box-shadow: 1px 1px rgba(128, 128, 128, 0.151);
+  }
