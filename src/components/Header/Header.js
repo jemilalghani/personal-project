@@ -1,27 +1,63 @@
 import React, { Component } from 'react';
 import './Header.css';
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {userLogin} from '../../ducks/reducer';
+import axios from 'axios';
 
 class Header extends Component {
     constructor(){
         super();
         this.state={
-            user: true,
+            loading:true,
+            error: null
         }
     }
+    componentDidMount(){
+        axios.get('/api/me').then(response=>{
+            this.props.userLogin(response.data);
+        }).catch(error=>{
+            this.setState({error});
+        }).then(()=>{
+            this.setState({loading:false});
+        })
+    }
+    logout(){
+        axios.post('/api/logout').then(()=>{
+            this.props.userLogin(null);
+            console.log('Bye Bye')
+        })
+    }
     render() {
+        const {user} = this.props;
+        const redirect_uri = encodeURIComponent(window.location.origin+'/auth/callback');
+        const url = `https://${process.env.REACT_APP_AUTH0_DOMAIN}/authorize?client_id=${process.env.REACT_APP_AUTH0_CLIENT_ID}&scope=openid%20profile%20email&redirect_uri=${redirect_uri}&response_type=code`;
         return (
-            <div className={this.state.user? 'Vertical' : 'Horizontal'}>
-                <h1>YEARLY</h1>
-                <p>Login</p>
-                <div>
+            this.props.pathname !== '/' ? 
+            (<div className='Vertical'>
+                <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet"></link>
+                {user? <Link to='/chart'><h1>YEARLY</h1></Link> 
+                : <Link to='/'><h1>YEARLY</h1></Link>}
+                <div className="links">
                     <ul>
-                        <li>Chart</li>
-                        <li>Profile</li>
-                        <li>Logout</li>
+                        <Link to= '/chart'><li>Chart</li></Link>
+                        <Link to= '/profile'><li>Profile</li></Link>
+                        <li><button onClick={()=>this.logout()}>Logout</button></li>
                     </ul>
                 </div>
-            </div>
+            </div>) 
+            : 
+            (<div className='Horizontal'>
+                <Link to='/'><h1>YEARLY</h1></Link>
+                <a href={url}>Login</a>
+            </div>)
+
         );
     }
 }
-export default Header;
+function mapStateToProps(state){
+    return{
+        user:state.user
+    }
+}
+export default connect(mapStateToProps, {userLogin})(Header);

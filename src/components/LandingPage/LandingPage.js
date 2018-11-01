@@ -4,6 +4,7 @@ import ColorTheme from '../ColorTheme/ColorTheme';
 import {connect} from 'react-redux';
 
 class LandingPage extends Component {
+
     render() {
         return (
             <div>
