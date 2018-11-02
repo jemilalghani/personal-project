@@ -6,6 +6,7 @@ require('dotenv').config();
 const userController = require('./controllers/userController');
 const authController = require('./controllers/authController');
 const pixalController = require('./controllers/pixalController');
+const messageController = require('./controllers/messageController');
 
 const app = express();
 app.use(bodyParser.json());
@@ -27,6 +28,9 @@ app.get('/auth/callback', authController.handleCallback);
 
 app.get('/api/pixals/:id', pixalController.getPixal);
 app.post('/api/pixals', pixalController.postPixal);
+
+app.get('/api/messages/:id', messageController.read);
+// app.post('/api/messages', messageController.create);
 
 app.use( express.static( `${__dirname}/../build` ) );
 

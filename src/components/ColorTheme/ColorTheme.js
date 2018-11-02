@@ -25,7 +25,6 @@ class ColorTheme extends Component{
         const {changeColor} = this.props
         return (
             <div>
-                <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"></link>
                 <div className="themeOne">
                     <button id="color-one" onClick={()=>changeColor('rgb(245,181,107)')} 
                     onMouseOver={this.toggle1} onMouseLeave={this.toggle1}>1</button>

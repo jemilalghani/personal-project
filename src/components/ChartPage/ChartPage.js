@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import Calendar from '../Calendar/Calendar';
 import ColorTheme from '../ColorTheme/ColorTheme';
+import './ChartPage.css';
 import {connect} from 'react-redux';
 
 class Chart extends Component {
     render() {
         return (
             <div>
-                 {this.props.user? <Calendar/> : 'loading..'}
+                {this.props.user? <Calendar/> : ''}
                 <ColorTheme/>
             </div>
         );

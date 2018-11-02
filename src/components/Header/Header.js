@@ -6,13 +6,6 @@ import {userLogin} from '../../ducks/reducer';
 import axios from 'axios';
 
 class Header extends Component {
-    constructor(){
-        super();
-        this.state={
-            loading:true,
-            error: null
-        }
-    }
     componentDidMount(){
         axios.get('/api/me').then(response=>{
             this.props.userLogin(response.data);
@@ -37,8 +30,6 @@ class Header extends Component {
         return (
             this.props.pathname !== '/' ? 
             (<div className='Vertical'>
-                <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet"></link>
-                <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"></link>
                 {user? <Link to='/chart'><h1>YEARLY</h1></Link> 
                 : <Link to='/'><h1>YEARLY</h1></Link>}
                 <div className="links">

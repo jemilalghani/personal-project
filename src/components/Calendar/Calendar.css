@@ -6,6 +6,7 @@
     max-width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));  
+    height:512px;
 }
 .Calendar .box>div{
     height: 20px;
@@ -13,4 +14,7 @@
     margin: 5px 5px;
     border: solid rgba(128, 128, 128, 0.651) 1px;
     box-shadow: 1px 1px rgba(128, 128, 128, 0.151);
+  }
+  .Calendar .box img {
+      margin: 280px auto;
   }

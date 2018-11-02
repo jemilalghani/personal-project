@@ -8,7 +8,9 @@ export default class ProfilePage extends Component {
         return (
             <div className="PandF">
                 <Profile/>
-                <Feed/>
+                <div>
+                    <Feed/>
+                </div>
             </div>
         );
     }

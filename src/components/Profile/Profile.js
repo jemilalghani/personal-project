@@ -29,8 +29,8 @@ class Profile extends Component {
                          &&
                         <div className="inputbox">
                             <h3>{this.props.user.name}</h3>
-                            <p>{this.props.user.email}</p>
-                            <p>Intention for the year</p>
+                            <h3>{this.props.user.email}</h3>
+                            <p>“ Yesterday is not ours to recover, but tomorrow is ours to win or lose.”</p>
                         </div>
                         }
                         <div className="editsaveButton">
