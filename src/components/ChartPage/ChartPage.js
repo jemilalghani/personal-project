@@ -7,7 +7,7 @@ class Chart extends Component {
     render() {
         return (
             <div>
-                 {this.props.user? <Calendar/> : ''}
+                 {this.props.user? <Calendar/> : 'loading..'}
                 <ColorTheme/>
             </div>
         );
