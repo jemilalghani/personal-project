@@ -1,14 +1,14 @@
 import React from 'react';
 import {Switch, Route } from 'react-router-dom';
 // import App from './App';
-import Profile from './components/Profile/Profile';
+import ProfilePage from './components/ProfilePage/ProfilePage';
 import LandingPage from './components/LandingPage/LandingPage';
-import Calendar from './components/Calendar/Calendar';
+import ChartPage from './components/ChartPage/ChartPage';
 
 export default (
     <Switch>
-        <Route path='/chart' component={Calendar}/>
-        <Route path='/profile' component={Profile}/>
+        <Route path='/chart' component={ChartPage}/>
+        <Route path='/profile' component={ProfilePage}/>
         <Route path='/' component={LandingPage}/>
     </Switch>
 )

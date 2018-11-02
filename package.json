@@ -6,6 +6,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "chart.js": "^2.7.3",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
@@ -20,6 +21,8 @@
     "redux": "^4.0.1"
   },
   "scripts": {
+    "now-start": "node server/index.js",
+    "deploy": "now --public --dotenv=.env.prod -d",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -27,6 +30,9 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "now":{
+    "alias":"pixa-year"
   },
   "browserslist": [
     ">0.2%",

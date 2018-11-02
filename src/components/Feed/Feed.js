@@ -5,7 +5,6 @@ class Feed extends Component {
     render() {
         const emotCircle = {
             background: sessionStorage.getItem('color') || this.props.color,
-            border: `solid ${sessionStorage.getItem('color')} .7px` || `solid rgba(0, 0, 0, 0.575) .7px`
         }
         return (
             <div className="Feed">
@@ -16,7 +15,7 @@ class Feed extends Component {
                         </div>
                         <div className="buttonFlex">
                             {/* <button id="button-one"></button> */}
-                            <button id="button-two"></button>
+                            <button  id="button-two">Submit</button>
                         </div>
                     </div>
                 <div className="Display"></div>

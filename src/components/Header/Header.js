@@ -27,6 +27,8 @@ class Header extends Component {
             this.props.userLogin(null);
             console.log('Bye Bye')
         })
+        sessionStorage.clear();
+        this.props.history.push('/');
     }
     render() {
         const {user} = this.props;

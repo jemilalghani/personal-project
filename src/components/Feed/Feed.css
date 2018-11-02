@@ -2,13 +2,14 @@
     margin: 30px;
     width: 550px;
     height: 200px;
-    border-radius: 30px;
+    /* border-radius: 30px; */
     display: flex;
     flex-direction: column;
-    border: solid rgb(0, 0, 0) .55px;
+    border: solid rgba(0, 0, 0, 0.651) .6px;
     /* background: rgba(148, 137, 133, 0.699); */
     /* background: rgba(42, 42, 40, 0.774); */
-    background: rgba(52, 30, 24, 0.411)
+    /* background: rgba(52, 30, 24, 0.411) */
+    background: rgb(157,160,196);
 }
 .Feed .Write .circleandtext{
     display: flex;
@@ -20,6 +21,7 @@
     width: 70px;
     border-radius: 70px;
     box-shadow: 1px 1px 1px 1px rgba(49, 49, 49, 0.164);
+    border: solid rgba(0, 0, 0, 0.575) .6px;
 }
 .Feed .Write textarea{
     border: solid rgba(0, 0, 0, 0.712) .55px;

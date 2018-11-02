@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Profile.css';
 import {connect} from 'react-redux';
 import{userLogin} from '../../ducks/reducer';
-import Feed from '../Feed/Feed';
 import Axios from 'axios';
 
 class Profile extends Component {
@@ -15,7 +14,6 @@ class Profile extends Component {
     }
     render() {
         return (
-            <div className="PandF">
                 <div className="Profile">
                     {this.props.user ?
                         <div className="boxtop">
@@ -40,10 +38,7 @@ class Profile extends Component {
                             <button>S</button>
                         </div>
                     </div>
-
                 </div>
-                <Feed/>
-            </div>
         );
     }
 }
