@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 import LandingCal from '../LandingCal/LandingCal';
-import ColorTheme from '../ColorTheme/ColorTheme';
+import LandingColorTheme from '../ColorTheme/LandingColorTheme';
 import './LandingPage.css';
-import {connect} from 'react-redux';
 
 class LandingPage extends Component {
+    constructor(){
+        super();
+        this.state={
+            color: 'white'
+        }
+    }
 
     render() {
+
         return (
             <div className="LandingPage">
-                <LandingCal/>
-                <ColorTheme/>
+                <LandingCal color={this.state.color}/>
+                <LandingColorTheme />
                 
             </div>
         );

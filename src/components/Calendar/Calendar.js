@@ -37,19 +37,19 @@ class Calendar extends Component {
             array.push(i)
         }
         let display = this.state.pixalColors && array.map((item)=>{
-            if(item === moment().dayOfYear()){
-                return <div style={jemila} className={`day-${item}`}></div>
-            } else if (this.state.pixalColors.findIndex(e =>  { 
-                    return e.year.toString() === moment().format('YYYY') && e.number_date === item
+            if (this.state.pixalColors.findIndex(e =>  { 
+                return e.year.toString() === moment().format('YYYY') && e.number_date === item
                 }) !== -1){
                 let index = this.state.pixalColors.findIndex(e => e.number_date === item)
                 return <div style={{background: `${this.state.pixalColors[index].mood}`}} className={`day-${item}`}></div>
+            } else if(item === moment().dayOfYear()){
+                return <div style={jemila} className={`day-${item}`}></div>
             } else {
                 return <div style={init} className={`day-${item}`}></div>
             }
         })
 
-        console.log(this.test)
+        console.log(this.state.pixalColors)
         return (
            <div className="Calendar">
                 <div className='box'>

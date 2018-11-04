@@ -6,3 +6,8 @@
     flex-wrap:wrap; 
     justify-content: space-around;
 }
+.PandF-Child{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

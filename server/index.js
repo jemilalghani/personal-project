@@ -26,11 +26,12 @@ app.get('/api/me', userController.getUserData);
 app.post('/api/logout', authController.logout);
 app.get('/auth/callback', authController.handleCallback);
 
-app.get('/api/pixals/:id', pixalController.getPixal);
+app.get('/api/pixals/:user_id', pixalController.getPixal);
+app.get('/api/pixals/:user_id/:number_date', pixalController.checkPixal);
 app.post('/api/pixals', pixalController.postPixal);
 
-app.get('/api/messages/:id', messageController.read);
-// app.post('/api/messages', messageController.create);
+app.get('/api/messages/:user_id', messageController.read);
+app.post('/api/messages/:user_id', messageController.create);
 
 app.use( express.static( `${__dirname}/../build` ) );
 

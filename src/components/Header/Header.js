@@ -3,17 +3,36 @@ import './Header.css';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {userLogin} from '../../ducks/reducer';
+import moment from 'moment';
 import axios from 'axios';
 
 class Header extends Component {
+    constructor(){
+        super();
+        this.state={
+            buttonOn: true,
+            pixalCheck: null,
+            userId: null
+        }
+        this.checkPixal=this.checkPixal.bind(this);
+    }
     componentDidMount(){
         axios.get('/api/me').then(response=>{
             this.props.userLogin(response.data);
-        }).catch(error=>{
-            this.setState({error});
-        }).then(()=>{
-            this.setState({loading:false});
+            this.setState({userId: response.data.id})
+            this.checkPixal()
+        }) 
+        if(this.state.pixalCheck === null){
+            document.getElementById('rainbow').disabled = 'true' 
+        }
+    }
+    checkPixal(){
+        let user = this.state.userId
+        let number = moment().dayOfYear()
+        axios.get(`/api/pixals/${user}/${number}`).then(res=>{
+            this.setState({pixalCheck:res.data})
         })
+        
     }
     logout(){
         axios.post('/api/logout').then(()=>{
@@ -22,6 +41,20 @@ class Header extends Component {
         })
         sessionStorage.clear();
         this.props.history.push('/');
+    }
+    postColor(){
+
+        let year = moment().format('YYYY');
+        let numberDate = moment().dayOfYear()
+        this.props.user && axios.post('/api/pixals', {
+            user_id:this.props.user.id,
+            year: year,
+            number_date: numberDate,
+            mood: this.props.color
+            }).then(()=>{
+                console.log("You did it")
+            })
+        this.setState({buttonOn:false}) 
     }
     render() {
         const {user} = this.props;
@@ -36,7 +69,8 @@ class Header extends Component {
                     <ul>
                         <Link to= '/chart'><li>Chart</li></Link>
                         <Link to= '/profile'><li>Profile</li></Link>
-                        <li><button onClick={()=>this.logout()}>Logout</button></li>
+                        <li className="rainbowContainer"><button id="rainbow" onClick={()=>this.postColor()} disabled={!this.state.buttonOn}>Finalize Your Color</button></li>
+                        <li><button className="logout" onClick={()=>this.logout()}>Logout</button></li>
                     </ul>
                 </div>
             </div>) 
@@ -53,7 +87,8 @@ class Header extends Component {
 }
 function mapStateToProps(state){
     return{
-        user:state.user
+        user:state.user,
+        color:state.color
     }
 }
 export default connect(mapStateToProps, {userLogin})(Header);

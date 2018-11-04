@@ -91,3 +91,6 @@
     outline: none;
     background: rgb(84,77,139);
 }
+.editsaveButton .none {
+    visibility: hidden;
+}

@@ -5,12 +5,26 @@ import{userLogin} from '../../ducks/reducer';
 import Axios from 'axios';
 
 class Profile extends Component {
+    constructor(){
+        super();
+        this.state={
+            buttonClick: false
+        }
+        this.changeButton = this.changeButton.bind(this);
+        this.saveUpdate=this.saveUpdate.bind(this);
+    }
     componentDidMount(){
         Axios.get('/api/me').then(res=>{
             this.props.userLogin(res.data);
         }).catch(error=>{
             console.log('error in mount', error)
         })
+    }
+    changeButton(){
+        this.setState((prevState)=>{return{buttonClick: !prevState.buttonClick}})
+    }
+    saveUpdate(){
+        this.setState({buttonClick:false})
     }
     render() {
         return (
@@ -34,8 +48,9 @@ class Profile extends Component {
                         </div>
                         }
                         <div className="editsaveButton">
-                            <button>E</button>
-                            <button>S</button>
+                            <button onClick={this.changeButton}>E</button>
+                            {/* {console.log(this.state.buttonClick)} */}
+                            <button className={this.state.buttonClick? '': 'none'} onClick={this.saveUpdate} >S</button>
                         </div>
                     </div>
                 </div>

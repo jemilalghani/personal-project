@@ -55,13 +55,39 @@
     font-family: 'Press Start 2P', cursive;
     background: transparent;
     border: none;
-    outline: none;
-    /* font-family: 'Slabo 27px', serif; */
     font-size: 12px;
     margin-top: 30px;
+}
+.Vertical .links .logout{
+    outline: none;
+    
 }
 .Vertical .links ul {
     display: flex;
     flex-direction: column;
     align-items: flex-end
 }
+.rainbowContainer{
+    height: 60px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#rainbow {
+    margin-top: 20px;
+    margin-right: 10px;
+    animation: rainbow 3s infinite; 
+    font-size: 10px;
+    outline-color: aliceblue;
+ }
+ @keyframes rainbow{
+   0%{color: orange;}	
+   10%{color: purple;}	
+     20%{color: red;}
+     40%{color: yellow;}
+     60%{color: green;}
+     100%{color: blue;}
+     100%{color: orange;}	
+ }
+ 

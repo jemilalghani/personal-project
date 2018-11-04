@@ -17,12 +17,11 @@ class Calendar extends Component {
         }
         let display = array.map((item, index)=>{
             if(item === moment().dayOfYear()){
-               return <div style={jemila} className={`day-${item}`}></div>
+               return <div style={jemila} className={`day-${item}`} key={index}></div>
             } else {
-                return <div style={init} className={`day-${item}`}></div>
+                return <div style={init} className={`day-${item}`} key={index}></div>
             }
-        })  
-        console.log(this.props.color);
+        })
         return (
            <div className="Calendar">
                 <div className='box'>
@@ -32,9 +31,5 @@ class Calendar extends Component {
         );
     }
 }
-function mapStateToProps(state){
-    return {
-        color:state.color
-    }
-}
-export default connect(mapStateToProps)(Calendar);
+
+export default Calendar;
