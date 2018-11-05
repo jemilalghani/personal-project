@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Feed.css';
 import {connect} from 'react-redux';
+import Cloudinary from '../Cloudinary/Cloudinary';
 import moment from 'moment';
 import Axios from 'axios';
 
@@ -9,10 +10,12 @@ class Feed extends Component {
         super();
         this.state={
             text:'',
-            color:false
+            color:false,
+            cloud: false
         }
         this.wordCount = this.wordCount.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.cloudRender = this.cloudRender.bind(this);
     }
     wordCount(){
         this.state.text.length >= 250 && this.setState({color: true})
@@ -41,6 +44,9 @@ class Feed extends Component {
         })
         this.clearTextArea()
     }
+    cloudRender(){
+        this.setState((prevState)=>{return{cloud: !prevState.cloud}})
+    }
     render() {
         const emotCircle = {
             background: sessionStorage.getItem('color') || this.props.color,
@@ -53,10 +59,11 @@ class Feed extends Component {
                         <textarea placeholder="    How has your day been?" value={this.state.text} onChange={this.handleChange} className={this.state.color? 'red' : ''}></textarea>
                     </div>
                     <div className="buttonFlex">
-                        {/* <button id="button-one"></button> */}
+                        <Cloudinary/>
                         <button  id="button-two" onClick={()=>this.postMessage()}>Submit</button>
                     </div>
                 </div>
+                {/* <div className="cloud">{this.state.cloud? <Cloudinary/>: ''}</div> */}
             </div> 
         );
     }

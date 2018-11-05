@@ -1,3 +1,4 @@
+
 .Feed .Write {
     margin: 30px;
     width: 550px;
@@ -43,7 +44,7 @@
 }
 .Feed .Write .buttonFlex{
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-evenly;
 }

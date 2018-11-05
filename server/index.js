@@ -37,6 +37,8 @@ app.post('/api/messages/:user_id', messageController.create);
 
 app.post('/api/email', userController.sendEmail);
 
+// app.get('http://quotes.rest/qod.json');
+
 app.use( express.static( `${__dirname}/../build` ) );
 
 const SERVER_PORT = 4000;
