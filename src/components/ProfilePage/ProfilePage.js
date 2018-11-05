@@ -13,6 +13,7 @@ class ProfilePage extends Component {
         super();
         // this.getMessages = this.getMessages.bind(this);
         this.getMessage = this.getMessage.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
     }
     getMessage(){
         this.props.user && Axios.get(`/api/messages/${this.props.user.id}/${moment().dayOfYear()}`).then((res)=>{
@@ -22,14 +23,16 @@ class ProfilePage extends Component {
     componentDidMount(){
         this.props.user && Axios.get(`/api/messages/${this.props.user.id}`).then((res)=>{
             this.props.userMessage(res.data)
+            console.log('here', res.data)
         })
+
     }
     render() {
         return (
             <div className="PandF">
                 <Profile/>
                 <div className="PandF-Child">
-                    <Feed getMessages={this.getMessage}/>
+                    <Feed getMessages={this.componentDidMount}/>
                     <ChatWindow/>
                 </div>
             </div>

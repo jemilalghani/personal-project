@@ -45,7 +45,6 @@ class Feed extends Component {
         const emotCircle = {
             background: sessionStorage.getItem('color') || this.props.color,
         }
-        console.log(moment().dayOfYear())
         return (
             <div className="Feed">
                 <div className="Write">

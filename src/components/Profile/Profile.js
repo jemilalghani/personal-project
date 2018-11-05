@@ -8,10 +8,12 @@ class Profile extends Component {
     constructor(){
         super();
         this.state={
-            buttonClick: false
+            buttonClick: false,
+            text:''
         }
         this.changeButton = this.changeButton.bind(this);
         this.saveUpdate=this.saveUpdate.bind(this);
+        this.handleChange=this.handleChange.bind(this);
     }
     componentDidMount(){
         Axios.get('/api/me').then(res=>{
@@ -25,9 +27,16 @@ class Profile extends Component {
     }
     saveUpdate(){
         this.setState({buttonClick:false})
+        this.props.user && Axios.patch(`/api/me/${this.props.user.id}`, {name:this.state.text}).then(()=>{
+            this.componentDidMount();
+        })
+    }
+    handleChange(e){
+        this.setState({text:e.target.value})
     }
     render() {
         return (
+            <div className="flexProfile">
                 <div className="Profile">
                     {this.props.user ?
                         <div className="boxtop">
@@ -54,6 +63,10 @@ class Profile extends Component {
                         </div>
                     </div>
                 </div>
+                <div className={this.state.buttonClick? 'inputNewName' : 'none'}>
+                    <input onChange={this.handleChange} placeholder="  Please input new display name"/>
+                </div>
+            </div>
         );
     }
 }

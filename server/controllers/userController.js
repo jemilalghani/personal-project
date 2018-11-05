@@ -28,5 +28,13 @@ module.exports={
               console.log(info);
          });
         
+    },
+    updateUsername:(req,res)=>{
+        const {name} = req.body;
+        const {id} = req.params;
+        req.session.user.name = name;
+        req.app.get('db').update_name([name, id]).then(()=>{
+            res.status(200).send('Yata');
+        })
     }
 };

@@ -32,6 +32,9 @@ class Header extends Component {
         user && axios.get(`/api/pixals/${user.id}/${number}`).then(res=>{
             this.setState({pixalCheck:res.data})
         })
+        if(this.state.pixalCheck !== null){
+            document.getElementById('rainbow').disabled = 'true' 
+        }
     }
     logout(){
         axios.post('/api/logout').then(()=>{
@@ -55,6 +58,7 @@ class Header extends Component {
         this.setState({buttonOn:false}) 
     }
     render() {
+        {this.checkPixal()}
         const {user} = this.props;
         const redirect_uri = encodeURIComponent(window.location.origin+'/auth/callback');
         const url = `https://${process.env.REACT_APP_AUTH0_DOMAIN}/authorize?client_id=${process.env.REACT_APP_AUTH0_CLIENT_ID}&scope=openid%20profile%20email&redirect_uri=${redirect_uri}&response_type=code`;
@@ -65,8 +69,8 @@ class Header extends Component {
                 : <Link to='/'><h1>YEARLY</h1></Link>}
                 <div className="links">
                     <ul>
-                        <Link to= '/chart'><li>Chart</li></Link>
                         <Link to= '/profile'><li>Profile</li></Link>
+                        <Link to= '/chart'><li>Calendar</li></Link>
                         <li className="rainbowContainer"><button id="rainbow" onClick={()=>this.postColor()} disabled={!this.state.buttonOn}>Finalize Your Color</button></li>
                         <li><button className="logout" onClick={()=>this.logout()}>Logout</button></li>
                     </ul>

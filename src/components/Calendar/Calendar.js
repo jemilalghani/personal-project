@@ -24,14 +24,12 @@ class Calendar extends Component {
     }
 
     render() {
-        console.log('Jemilaishere', this.state.pixalColors)
         const jemila = {
             background: this.props.color
         }
         const init = {
             background: 'white'
         }
-        
         let array = [];
         for (let i=1;i<=366;i++){
             array.push(i)
@@ -48,8 +46,6 @@ class Calendar extends Component {
                 return <div style={init} className={`day-${item}`}></div>
             }
         })
-
-        console.log(this.state.pixalColors)
         return (
            <div className="Calendar">
                 <div className='box'>

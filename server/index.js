@@ -23,6 +23,7 @@ massive(process.env.CONNECTION_STRING).then(database=>{
 });
 
 app.get('/api/me', userController.getUserData);
+app.patch('/api/me/:id', userController.updateUsername);
 app.post('/api/logout', authController.logout);
 app.get('/auth/callback', authController.handleCallback);
 

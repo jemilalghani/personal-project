@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 class Chart extends Component {
     render() {
         return (
-            <div>
+            <div className="chartPage">
                 {this.props.user? <Calendar/> : ''}
                 <ColorTheme/>
             </div>

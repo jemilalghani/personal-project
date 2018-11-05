@@ -16,8 +16,9 @@
     margin-top:5px;
     top: 10px;
     left: 10px;
-    font-size: 11px;
+    font-size: 12px;
     opacity: 0.5;
+    font-family: 'VT323', monospace;
   }
   
   .Message__text {
@@ -26,6 +27,8 @@
     word-wrap: break-word;
     white-space: pre-wrap;
     padding-bottom: 10px;
+    font-family: 'VT323', monospace;
+    font-size: 15px;
   }
   .dateCircle{
     margin-top:5px;
