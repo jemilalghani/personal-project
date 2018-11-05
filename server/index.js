@@ -30,8 +30,11 @@ app.get('/api/pixals/:user_id', pixalController.getPixal);
 app.get('/api/pixals/:user_id/:number_date', pixalController.checkPixal);
 app.post('/api/pixals', pixalController.postPixal);
 
+app.get('/api/messages/:user_id/:number_date', messageController.readone)
 app.get('/api/messages/:user_id', messageController.read);
 app.post('/api/messages/:user_id', messageController.create);
+
+app.post('/api/email', userController.sendEmail);
 
 app.use( express.static( `${__dirname}/../build` ) );
 

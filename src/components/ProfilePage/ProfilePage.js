@@ -6,26 +6,30 @@ import ChatWindow from '../ChartWindow/ChatWindow';
 import {userMessage} from '../../ducks/reducer';
 import Axios from 'axios';
 import {connect} from 'react-redux';
+import moment from 'moment';
 
 class ProfilePage extends Component {
     constructor(){
         super();
-        this.getMessages = this.getMessages.bind(this);
+        // this.getMessages = this.getMessages.bind(this);
+        this.getMessage = this.getMessage.bind(this);
     }
-    getMessages(){
-        this.props.user && Axios.get(`/api/messages/${this.props.user.id}`).then((res)=>{
+    getMessage(){
+        this.props.user && Axios.get(`/api/messages/${this.props.user.id}/${moment().dayOfYear()}`).then((res)=>{
             this.props.userMessage(res.data)
         })
     }
     componentDidMount(){
-        this.getMessages();
+        this.props.user && Axios.get(`/api/messages/${this.props.user.id}`).then((res)=>{
+            this.props.userMessage(res.data)
+        })
     }
     render() {
         return (
             <div className="PandF">
                 <Profile/>
                 <div className="PandF-Child">
-                    <Feed getMessages={this.getMessages}/>
+                    <Feed getMessages={this.getMessage}/>
                     <ChatWindow/>
                 </div>
             </div>

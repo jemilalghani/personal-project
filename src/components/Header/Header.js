@@ -17,22 +17,21 @@ class Header extends Component {
         this.checkPixal=this.checkPixal.bind(this);
     }
     componentDidMount(){
+        this.checkPixal()
         axios.get('/api/me').then(response=>{
             this.props.userLogin(response.data);
-            this.setState({userId: response.data.id})
-            this.checkPixal()
+            response.data && this.setState({userId: response.data.id})
         }) 
-        if(this.state.pixalCheck === null){
+        if(this.state.pixalCheck !== null){
             document.getElementById('rainbow').disabled = 'true' 
         }
     }
     checkPixal(){
-        let user = this.state.userId
+        let user = this.props.user
         let number = moment().dayOfYear()
-        axios.get(`/api/pixals/${user}/${number}`).then(res=>{
+        user && axios.get(`/api/pixals/${user.id}/${number}`).then(res=>{
             this.setState({pixalCheck:res.data})
         })
-        
     }
     logout(){
         axios.post('/api/logout').then(()=>{
@@ -43,7 +42,6 @@ class Header extends Component {
         this.props.history.push('/');
     }
     postColor(){
-
         let year = moment().format('YYYY');
         let numberDate = moment().dayOfYear()
         this.props.user && axios.post('/api/pixals', {

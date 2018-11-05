@@ -3,6 +3,7 @@ import './ChatWindow.css';
 import {connect} from 'react-redux';
 import Messages from '../Messages/Messages';
 
+
 class ChatWindow extends Component {
     render() {
         return (

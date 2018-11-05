@@ -12,5 +12,12 @@ module.exports={
         req.app.get('db').create_message([user_id, year, date,number_date,message]).then(()=>{
             res.status(200).send('YASS')
         })
+    },
+    readone:(req,res)=>{
+        req.app.get('db').get_message([req.params.user_id, res.params.user_id]).then((post)=>{
+            res.status(200).json(post)
+        }).catch(error=>{
+            console.error('error in getting one', error)
+        })
     }
 }
