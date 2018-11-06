@@ -1,7 +1,7 @@
 .Message__container {
     width: calc(100% - 20px);
     height: 100vi;
-    padding: 0 10px;
+    padding: 10px 10px;
     background: #fff;
     border-radius: 3px;
     display: flex;
@@ -36,9 +36,7 @@
     /* margin-bottom: 10px; */
     justify-content: space-between;
   }
-  .dateCircle img{
-    margin-top:5px;
-  }
+
   .datecircle-side{
     display: flex;
     align-items:flex-start;

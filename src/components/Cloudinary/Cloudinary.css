@@ -7,6 +7,7 @@
     align-items: center;
     text-align: center;
     border-radius: 5px;
+    overflow: hidden;
     /* margin-bottom: 10px; */
 }
 /* .Cloudinary img {
@@ -19,4 +20,14 @@
     font-family: 'VT323', monospace;
     font-size: 15px;
     padding: 5px;
+}
+form {
+    display:flex;
+}
+form>button{
+    height: 20px;
+    border: none;
+    outline: none;
+    background: rgb(229,201,190);
+    color:black;
 }

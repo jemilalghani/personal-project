@@ -15,12 +15,14 @@ class Cloudinary extends Component {
             uploadedFile: null,
             uploadedFileCloudinaryUrl:''
         }
+        this.clear=this.clear.bind(this);
     }
     onImageDrop(files){
         this.setState({
             uploadedFile: files[0]
         });
         this.handleImageUpload(files[0]);
+        // this.clear();
     }
     handleImageUpload(file){
         let upload = request.post(CLOUDINARY_UPLOAD_URL)
@@ -38,6 +40,10 @@ class Cloudinary extends Component {
             }
         })
     }
+    clear(){
+        this.setState({uploadedFile: null, uploadedFileCloudinaryUrl:''})
+    }
+
     render() {
         return (
             <form>
@@ -59,6 +65,7 @@ class Cloudinary extends Component {
                     </div>
                     </Dropzone>
                 </div>
+                    <button onClick={this.clear}>X</button>
             </form>
         );
     }
