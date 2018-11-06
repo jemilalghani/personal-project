@@ -36,7 +36,7 @@
     border-top: solid rgb(0, 0, 0) .7px;
     border-bottom: solid white .7px;
 }
-.circle{
+.Profile .boxtop .circle{
     display: block;
     margin: auto;
 }

@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
 import './Cloudinary.css';
+import {connect} from 'react-redux';
+import {uploadImg} from '../../ducks/reducer';
 
 const CLOUDINARY_UPLOAD_PRESET = 'gz0ctmrp';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dptjp5wvq/image/upload';
 
-export default class Cloudinary extends Component {
+class Cloudinary extends Component {
     constructor(){
         super();
         this.state={
@@ -32,6 +34,7 @@ export default class Cloudinary extends Component {
                 this.setState({
                     uploadedFileCloudinaryUrl: response.body.secure_url
                 })
+                this.props.uploadImg(response.body.secure_url);
             }
         })
     }
@@ -49,8 +52,8 @@ export default class Cloudinary extends Component {
                     <div>
                         {this.state.uploadedFileCloudinaryUrl === ''? null: 
                             <div>
+                                {/* <img src={this.state.uploadedFileCloudinaryUrl} /> */}
                                 <p>{this.state.uploadedFile.name}</p>
-                                <img src={this.state.uploadedFileCloudinaryUrl} />
                             </div>
                         }
                     </div>
@@ -60,3 +63,9 @@ export default class Cloudinary extends Component {
         );
     }
 }
+function mapStateToProps(state){
+    return {
+        image:state.image
+    }
+}
+export default connect(mapStateToProps, {uploadImg})(Cloudinary);

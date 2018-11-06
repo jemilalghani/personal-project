@@ -31,11 +31,20 @@
     font-size: 15px;
   }
   .dateCircle{
-    margin-top:5px;
+    /* margin-top:5px; */
     display: flex;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
+    justify-content: space-between;
+  }
+  .dateCircle img{
+    margin-top:5px;
+  }
+  .datecircle-side{
+    display: flex;
+    align-items:flex-start;
   }
   .circle{
+    margin-top: 5px;
     margin-right: 10px;
     height: 10px;
     width:10px;

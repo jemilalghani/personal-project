@@ -8,8 +8,8 @@ module.exports={
     },
     create: (req,res)=>{
         const {user_id} = req.params;
-        const {year, date, number_date, message} = req.body;
-        req.app.get('db').create_message([user_id, year, date,number_date,message]).then(()=>{
+        const {year, date, number_date, message, picture} = req.body;
+        req.app.get('db').create_message([user_id, year, date,number_date,message, picture]).then(()=>{
             res.status(200).send('YASS')
         })
     },

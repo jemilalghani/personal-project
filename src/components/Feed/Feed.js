@@ -38,7 +38,8 @@ class Feed extends Component {
             year: year,
             date: date.toString(),
             number_date: numberDate,
-            message: this.state.text
+            message: this.state.text,
+            picture: this.props.image
         }).then(()=>{
             this.props.getMessages()
         })
@@ -70,7 +71,8 @@ class Feed extends Component {
 }
 function mapStateToProps(state){
     return {
-        user:state.user
+        user:state.user,
+        image:state.image
     }
 }
 export default connect(mapStateToProps)(Feed);
