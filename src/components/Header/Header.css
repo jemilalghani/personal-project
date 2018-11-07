@@ -117,3 +117,11 @@
     /* 80%{filter: blur(0px); border-radius: 0px;} */
     100%{opacity: 0; display: none;}
 }
+.popupSuccess{
+    position: absolute;
+    top:20%;
+    left:50%;
+    
+
+
+}

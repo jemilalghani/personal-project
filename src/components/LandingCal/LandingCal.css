@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));  
 }
-.Calendar .boxone>div{
+/* .Calendar .boxone>div{
     animation: rainbowtwo 3s;
     animation-iteration-count: 2; 
 }
@@ -20,7 +20,7 @@
     60%{background: rgb(170,43,34);}
     100%{background: rgb(96,85,110);}
     100%{background: rgb(245,181,107);}	
-  }
+  } */
 /* .box .day-23{
     background: pink;
 } */

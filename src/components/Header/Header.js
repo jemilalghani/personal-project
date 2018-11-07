@@ -13,11 +13,13 @@ class Header extends Component {
             buttonOn: true,
             pixalCheck: null,
             userId: null,
-            duplicatedEntry: false
+            duplicatedEntry: false,
+            posting: false
         }
         // this.checkPixal=this.checkPixal.bind(this);
         this.disable=this.disable.bind(this);
         this.time=this.time.bind(this);
+        this.timeTwo=this.timeTwo.bind(this);
     }
     componentDidMount(){
         axios.get('/api/me').then(response=>{
@@ -65,18 +67,22 @@ class Header extends Component {
             user_id:this.props.user.id,
             date: date,
             mood: this.props.color
-            }).then((res)=>{
-                console.log(res)
+            }).then(()=>{
+                this.setState({posting:true})
+                this.timeTwo();
             }).catch(()=>{
                 this.setState({duplicatedEntry: true})
                 this.time();
-            }) :
+            }) 
+            :
             alert('Please select a Color First')
     }
     time(){
         setTimeout(()=>{this.setState({duplicatedEntry:false})},4000)
     }
-
+    timeTwo(){
+        setTimeout(()=>{this.setState({posting:false})},2000)
+    }
     email(){
         this.props.user && axios.post('/api/email', {email: this.props.user.email}).then(()=>{
             alert('Email Sent')
@@ -90,6 +96,7 @@ class Header extends Component {
             this.props.pathname !== '/' ? 
             (<div className='Vertical'>
                 {this.state.duplicatedEntry && <img className="popup" src='https://art.pixilart.com/e62f3fa6e0c1c5f.png' width="300" alt=''/>}
+                {this.state.posting && <img className="popupSuccess" src='https://i.imgur.com/k0jQgLA.gif?noredirect' width="200" alt=''/>}
                 {user? <Link to='/chart'><h1>YEARLY</h1></Link> 
                 : <Link to='/'><h1>YEARLY</h1></Link>}
                 <div className="links">

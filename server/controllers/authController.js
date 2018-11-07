@@ -19,7 +19,6 @@ module.exports={
             if (process.env.NODE_ENV!=='production'){
                 protocol = `https`
             }
-            console.log('process.env.NODE_ENV',process.env.NODE_ENV)
 
             const payload = {
                 client_id:process.env.REACT_APP_AUTH0_CLIENT_ID,
