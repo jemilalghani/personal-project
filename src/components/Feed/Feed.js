@@ -53,7 +53,7 @@ class Feed extends Component {
                 <div className="Write">
                     <div className="circleandtext">
                         <div style={emotCircle} className="emotCircle"></div>
-                        <textarea placeholder="    How has your day been?" value={this.state.text} onChange={this.handleChange} className={this.state.color? 'red' : ''}></textarea>
+                        <textarea placeholder="    Please finalize your color first" value={this.state.text} onChange={this.handleChange} className={this.state.color? 'red' : ''}></textarea>
                     </div>
                     <div className="buttonFlex">
                         <Cloudinary/>

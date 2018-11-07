@@ -22,7 +22,6 @@ class Header extends Component {
     componentDidMount(){
         axios.get('/api/me').then(response=>{
             this.props.userLogin(response.data);
-            console.log("response.data.id",response.data.id)
         }) 
         // this.disable()
     }
@@ -82,8 +81,6 @@ class Header extends Component {
         })
     }
     render() {
-       console.log(this.state.buttonOn)
-       console.log(this.state.pixalCheck)
         const {user} = this.props;
         const redirect_uri = encodeURIComponent(window.location.origin+'/auth/callback');
         const url = `https://${process.env.REACT_APP_AUTH0_DOMAIN}/authorize?client_id=${process.env.REACT_APP_AUTH0_CLIENT_ID}&scope=openid%20profile%20email&redirect_uri=${redirect_uri}&response_type=code`;
@@ -108,7 +105,7 @@ class Header extends Component {
                 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"></link>
                 <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"></link>
                 <Link to='/'><h1>YEARLY</h1></Link>
-                <a href={url}>Register</a>
+                <a href={url}>Login</a>
             </div>)
 
         );
