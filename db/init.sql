@@ -24,8 +24,9 @@ drop table if exists pixals;
 create table pixals (
     id serial primary key
     , user_id int REFERENCES users(id)
-    , date date UNIQUE not null
+    , date date not null
     , mood text not null
+    , unique (date, user_id)
 );
 
 select * from pixals
