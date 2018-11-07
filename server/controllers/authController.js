@@ -15,9 +15,9 @@ module.exports={
                 res.status(500).send('An unexpected error happened on the server');
             });
         function exchangeCodeForAccessToken(){
-            let protocol = `https`;
+            let protocol = `http`;
             if (process.env.NODE_ENV!=='production'){
-                protocol = `http`
+                protocol = `https`
             }
             console.log('process.env.NODE_ENV',process.env.NODE_ENV)
 

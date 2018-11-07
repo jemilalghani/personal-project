@@ -60,6 +60,7 @@ class Header extends Component {
     }
     postColor(){
         let date = moment().format('YYYY-MM-DD')
+        this.props.color !== 'white'?
         this.props.user && axios.post('/api/pixals', {
             user_id:this.props.user.id,
             date: date,
@@ -69,7 +70,8 @@ class Header extends Component {
             }).catch(()=>{
                 this.setState({duplicatedEntry: true})
                 this.time();
-            })
+            }) :
+            alert('Please select a Color First')
     }
     time(){
         setTimeout(()=>{this.setState({duplicatedEntry:false})},4000)

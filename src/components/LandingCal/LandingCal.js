@@ -17,7 +17,7 @@ class Calendar extends Component {
         })
         return (
            <div className="Calendar">
-                <div className='box'>
+                <div className='boxone'>
                     {display}
                 </div>
            </div> 
