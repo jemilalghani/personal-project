@@ -1,7 +1,7 @@
 .PandF{
-    max-width: 90%;
+    width: 90%;
     height: 100%;
-    margin-left: 200px;
+    /* margin-left: 200px; */
     display: flex;
     flex-wrap:wrap; 
     justify-content: space-around;

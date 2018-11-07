@@ -40,11 +40,11 @@ class Profile extends Component {
                 <div className="Profile">
                     {this.props.user ?
                         <div className="boxtop">
-                            <img className="circle" src={this.props.user.picture} alt="https://cdn.pixabay.com/photo/2018/01/19/14/40/nature-3092555_960_720.jpg"/>
+                            <img className="circle" src={this.props.user.picture} alt=""/>
                         </div>
                         :
                         <div className="boxtop">
-                            <img className="circle" src="https://www.thespruce.com/thmb/pXjTPWmGforPCGxJgTM_yXKpTGg=/776x580/filters:no_upscale()/Halo_BM-56a192a35f9b58b7d0c0c0d7.png"/>
+                            <img className="circle" src="https://www.thespruce.com/thmb/pXjTPWmGforPCGxJgTM_yXKpTGg=/776x580/filters:no_upscale()/Halo_BM-56a192a35f9b58b7d0c0c0d7.png" alt=''/>
                         </div>
                     }
                     <div className="boxbottom">

@@ -28,10 +28,10 @@ app.post('/api/logout', authController.logout);
 app.get('/auth/callback', authController.handleCallback);
 
 app.get('/api/pixals/:user_id', pixalController.getPixal);
-app.get('/api/pixals/:user_id/:number_date', pixalController.checkPixal);
+app.get('/api/pixals/:user_id/:date', pixalController.checkPixal);
 app.post('/api/pixals', pixalController.postPixal);
 
-app.get('/api/messages/:user_id/:number_date', messageController.readone)
+app.get('/api/messages/:user_id/:date', messageController.readone)
 app.get('/api/messages/:user_id', messageController.read);
 app.post('/api/messages/:user_id', messageController.create);
 

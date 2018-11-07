@@ -53,12 +53,11 @@ class Cloudinary extends Component {
                     accept="image/*"
                     onDrop={this.onImageDrop.bind(this)}
                     className="Cloud"
-                    placeholder= "drop image here">
+                    >
                     {!this.state.uploadedFileCloudinaryUrl && <p>drop image here</p>}
                     <div>
                         {this.state.uploadedFileCloudinaryUrl === ''? null: 
                             <div>
-                                {/* <img src={this.state.uploadedFileCloudinaryUrl} /> */}
                                 <p>{this.state.uploadedFile.name}</p>
                             </div>
                         }

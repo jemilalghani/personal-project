@@ -30,14 +30,10 @@ class Feed extends Component {
         this.setState({text:' '})
     }
     postMessage(){
-        let year = moment().format('YYYY');
-        let date = moment().format('L');
-        let numberDate = moment().dayOfYear()
+        let date = moment().format('YYYY-MM-DD');
         Axios.post(`/api/messages/${this.props.user.id}`, {
             user_id: this.props.user.id,
-            year: year,
-            date: date.toString(),
-            number_date: numberDate,
+            date: date,
             message: this.state.text,
             picture: this.props.image
         }).then(()=>{

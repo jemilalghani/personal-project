@@ -1,13 +1,3 @@
-/* html {
-  overflow:hidden;
-  height:100%;
+.App{
+  display: flex;
 }
-
-body {
-  height:100%;
-  overflow:auto;
-} */
-
-/* .App {
-  height: 100vh;
-} */

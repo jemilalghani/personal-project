@@ -1,3 +1,3 @@
-select m.id, m.year, m.date, m.number_date, m.message, p.mood, m.picture from messages m 
-join pixals p on p.number_date = m.number_date
-where m.user_id = $1 order by m.id desc, m.number_date desc;
+select distinct m.id, m.date, m.message, p.mood, m.picture from messages m 
+join pixals p on p.date = m.date
+where m.user_id = $1 order by m.id desc;

@@ -36,9 +36,9 @@ class Calendar extends Component {
         }
         let display = this.state.pixalColors && array.map((item)=>{
             if (this.state.pixalColors.findIndex(e =>  { 
-                return e.year.toString() === moment().format('YYYY') && e.number_date === item
+                return moment(e.date).dayOfYear() === item
                 }) !== -1){
-                let index = this.state.pixalColors.findIndex(e => e.number_date === item)
+                let index = this.state.pixalColors.findIndex(e => moment(e.date).dayOfYear() === item)
                 return <div style={{background: `${this.state.pixalColors[index].mood}`}} className={`day-${item}`}></div>
             } else if(item === moment().dayOfYear()){
                 return <div style={jemila} className={`day-${item}`}></div>
@@ -49,7 +49,7 @@ class Calendar extends Component {
         return (
            <div className="Calendar">
                 <div className='box'>
-                    {display? display: <img src="https://media.giphy.com/media/l3V0GQMoaDLVbjXEI/giphy.gif" width='100' alt=''/>}
+                    {display? display: <img src="https://loading.io/spinners/fidget-spinner/lg.fidget-spinner.gif" width='100' alt=''/>}
                 </div>
            </div> 
         );
