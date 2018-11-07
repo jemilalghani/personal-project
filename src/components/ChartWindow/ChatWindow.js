@@ -5,6 +5,9 @@ import Messages from '../Messages/Messages';
 
 
 class ChatWindow extends Component {
+    componentDidMount(){
+        this.props.getMessages() 
+    }
     render() {
        this.props.messages &&  console.log(this.props.messages)
         return (
