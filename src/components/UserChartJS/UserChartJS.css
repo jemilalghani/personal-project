@@ -1,0 +1,36 @@
+.chartjs-container2{
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.weekUserButtons button>.show{
+    display: block;
+}
+.weekUserButtons button{
+    background: rgba(101, 101, 86, 0.6);
+    border: none;
+    padding: 5px;
+    margin: 2px;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
+.weekUserButtons {
+    margin: auto 200px;
+}
+
+@media (max-width: 1210px) {
+
+    .weekUserButtons {
+        margin: 100px 0;
+    }
+
+    .chartjs-container2 {
+        margin-top: 230px;
+        flex-direction: column;
+    }
+}
