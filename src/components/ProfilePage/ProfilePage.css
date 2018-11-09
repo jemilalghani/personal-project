@@ -11,3 +11,14 @@
     flex-direction: column;
     align-items: center;
 }
+@media screen and (max-width:900px){
+    .PandF{
+        width: 100%
+    }
+}
+@media screen and (max-width:414px){
+    .PandF-Child{
+        flex-direction: column-reverse;
+    }
+
+}

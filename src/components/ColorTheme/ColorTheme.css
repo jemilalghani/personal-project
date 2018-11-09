@@ -21,6 +21,7 @@
     padding: 15px 25px;
     color: white;
     outline: none;
+    cursor: pointer;
 }
 .themeOne #color-one{
     background-color: rgb(245,181,107);

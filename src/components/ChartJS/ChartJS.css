@@ -3,28 +3,24 @@
     height: 150px;
     justify-content: center;
     align-items: center;
-
     width: 300px;
     margin: 0 auto;
-    /* justify-content: center; */
-    border: 1px solid black;
-    /* margin-left: 500px; */
-}
-
-.chartjs > div{
-    
 }
 .weekButtons .hide{
     display: none;
- 
 }
 .weekButtons button>.show{
     display: block;
-
-   
+}
+.weekButtons button{
+    background: rgba(101, 101, 86, 0.6);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    outline: none;
 }
 .weekButtons {
-    border: 1px solid pink;
     margin: 0 200px;
 }
 
