@@ -26,10 +26,14 @@ class Profile extends Component {
         this.setState((prevState)=>{return{buttonClick: !prevState.buttonClick}})
     }
     saveUpdate(){
-        this.setState({buttonClick:false})
-        this.props.user && Axios.patch(`/api/me/${this.props.user.id}`, {name:this.state.text}).then(()=>{
-            this.componentDidMount();
-        })
+        if(this.state.text.length) {
+            this.setState({buttonClick:false})
+            this.props.user && Axios.patch(`/api/me/${this.props.user.id}`, {name:this.state.text}).then(()=>{
+                this.componentDidMount();
+            })
+        } else {
+            this.setState({buttonClick:false})
+        }
     }
     handleChange(e){
         this.setState({text:e.target.value})
