@@ -23,7 +23,7 @@ class ColorTheme extends Component{
 
     render(){
         return (
-            <div>
+            <div className="ColorBox">
                 <div className="themeOne">
                     <button id="color-one"  
                     onMouseOver={this.toggle1} onMouseLeave={this.toggle1}>1</button>

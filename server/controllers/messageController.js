@@ -19,5 +19,12 @@ module.exports={
         }).catch(error=>{
             console.error('error in getting one', error)
         })
+    },
+    delete:(req,res)=>{
+        req.app.get('db').delete_message([req.params.user_id, req.params.id]).then(()=>{
+            res.status(200).send('YASS')
+        }).catch(error=>{
+            console.error('error in delete', error)
+        })
     }
 }

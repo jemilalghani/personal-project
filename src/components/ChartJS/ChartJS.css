@@ -1,0 +1,41 @@
+.chartjs-container{
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+
+    width: 300px;
+    margin: 0 auto;
+    /* justify-content: center; */
+    border: 1px solid black;
+    /* margin-left: 500px; */
+}
+
+.chartjs > div{
+    
+}
+.weekButtons .hide{
+    display: none;
+ 
+}
+.weekButtons button>.show{
+    display: block;
+
+   
+}
+.weekButtons {
+    border: 1px solid pink;
+    margin: 0 200px;
+}
+
+@media (max-width: 900px) {
+
+    .weekButtons {
+        margin: 100px 0;
+    }
+
+    .chartjs-container {
+        margin-top: 230px;
+        flex-direction: column;
+    }
+}

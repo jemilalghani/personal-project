@@ -77,12 +77,8 @@ class Header extends Component {
             :
             alert('Please select a Color First')
     }
-    time(){
-        setTimeout(()=>{this.setState({duplicatedEntry:false})},4000)
-    }
-    timeTwo(){
-        setTimeout(()=>{this.setState({posting:false})},2000)
-    }
+    time(){setTimeout(()=>{this.setState({duplicatedEntry:false})},4000)}
+    timeTwo(){setTimeout(()=>{this.setState({posting:false})},2000)}
     email(){
         this.props.user && axios.post('/api/email', {email: this.props.user.email}).then(()=>{
             alert('Email Sent')

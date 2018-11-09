@@ -13,14 +13,12 @@ module.exports={
                    pass: (process.env.Y)
                }
            })
-
            const mailOptions = {
             from: process.env.X, // sender address
             to: email, // list of receivers
             subject: 'Welcome', // Subject line
             html: '<p>email content</p>'// plain text body
           }
-
           transporter.sendMail(mailOptions, function (err, info) {
             if(err)
               console.log(err)

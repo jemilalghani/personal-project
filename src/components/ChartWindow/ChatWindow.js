@@ -2,20 +2,31 @@ import React, { Component } from 'react';
 import './ChatWindow.css';
 import {connect} from 'react-redux';
 import Messages from '../Messages/Messages';
+import Axios from 'axios';
 
 
 class ChatWindow extends Component {
+    constructor(){
+        super();
+        this.delete=this.delete.bind(this);
+    }
     componentDidMount(){
         this.props.getMessages() 
     }
+    delete(userId, id){
+        Axios.delete(`/api/messages/${userId}/${id}`).then(()=>{
+            this.props.getMessages();
+        })
+    }
     render() {
-       this.props.messages &&  console.log(this.props.messages)
         return (
             <div className="chat-container">
                 <div className="chat-parentcontainer">
                 {
                 this.props.messages && this.props.messages.map( message => (
-                    <Messages id={ message.id} key={ message.id } text={ message.message } image={message.picture} date={ message.date } mood={message.mood}/>
+                    <Messages id={ message.id} key={ message.id } text={ message.message} 
+                    image={message.picture} date={ message.date } mood={message.mood} 
+                    delete={this.delete}/>
                 ))
                 }
                 </div>
@@ -25,7 +36,7 @@ class ChatWindow extends Component {
 }
 function mapStateToProps(state){
     return{
-        messages:state.messages,
+        messages:state.messages
     }
 }
 export default connect(mapStateToProps)(ChatWindow);

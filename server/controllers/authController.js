@@ -4,7 +4,6 @@ module.exports={
     logout:(req,res)=>{
         req.session.user = null;
         res.send();
-        // res.status(200).json({message:'Successfully logged out'})
     },
     handleCallback:(req, res)=>{
         exchangeCodeForAccessToken()

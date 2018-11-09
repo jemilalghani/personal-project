@@ -34,6 +34,7 @@ app.post('/api/pixals', pixalController.postPixal);
 app.get('/api/messages/:user_id/:date', messageController.readone)
 app.get('/api/messages/:user_id', messageController.read);
 app.post('/api/messages/:user_id', messageController.create);
+app.delete('/api/messages/:user_id/:id', messageController.delete);
 
 app.post('/api/email', userController.sendEmail);
 

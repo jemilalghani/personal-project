@@ -60,7 +60,6 @@ class Feed extends Component {
                         <button  id="button-two" onClick={()=>this.postMessage()}>Submit</button>
                     </div>
                 </div>
-                {/* <div className="cloud">{this.state.cloud? <Cloudinary/>: ''}</div> */}
             </div> 
         );
     }

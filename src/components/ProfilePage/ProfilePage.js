@@ -29,7 +29,7 @@ class ProfilePage extends Component {
                 <Profile/>
                 <div className="PandF-Child">
                     <Feed getMessages={this.getMessage}/>
-                    <ChatWindow getMessages={this.getMessage}/>
+                    {this.props.user && <ChatWindow getMessages={this.getMessage} userId={this.props.user.id}/>}
                 </div>
             </div>
         );

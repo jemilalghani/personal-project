@@ -18,3 +18,13 @@
   .Calendar .box img {
       margin: 280px auto;
   }
+@media screen and (max-width:900px){
+        .Calendar .box{
+            height: 600px;
+        }
+    }  
+  @media screen and (max-width:800px){
+      .Calendar .box{
+          height: 600px;
+      }
+  }

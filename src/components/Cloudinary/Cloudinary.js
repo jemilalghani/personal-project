@@ -22,7 +22,6 @@ class Cloudinary extends Component {
             uploadedFile: files[0]
         });
         this.handleImageUpload(files[0]);
-        // this.clear();
     }
     handleImageUpload(file){
         let upload = request.post(CLOUDINARY_UPLOAD_URL)

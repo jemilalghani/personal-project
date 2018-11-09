@@ -20,15 +20,11 @@ class Calendar extends Component {
                     console.log('error in mount', error)
                 })
         }, 0)
-        
     }
-
     render() {
-        const jemila = {
-            background: this.props.color
-        }
-        const init = {
-            background: 'white'
+        const currentDay = {
+            background: this.props.color,
+            border: 'solid rgba(0, 0, 0, 0.61) 1.2px'
         }
         let array = [];
         for (let i=1;i<=366;i++){
@@ -41,15 +37,15 @@ class Calendar extends Component {
                 let index = this.state.pixalColors.findIndex(e => moment(e.date).dayOfYear() === item)
                 return <div style={{background: `${this.state.pixalColors[index].mood}`}} className={`day-${item}`}></div>
             } else if(item === moment().dayOfYear()){
-                return <div style={jemila} className={`day-${item}`}></div>
+                return <div style={currentDay} className={`day-${item}`}></div>
             } else {
-                return <div style={init} className={`day-${item}`}></div>
+                return <div style={{background: 'white'}} className={`day-${item}`}></div>
             }
         })
         return (
            <div className="Calendar">
                 <div className='box'>
-                    {display? display: <img src="https://loading.io/spinners/fidget-spinner/lg.fidget-spinner.gif" width='100' alt=''/>}
+                    {display? display: <img src="https://i.imgur.com/k0jQgLA.gif?noredirect" width='100' alt=''/>}
                 </div>
            </div> 
         );
