@@ -18,6 +18,8 @@ class LandingPage extends Component {
                 <img src={banner} alt=''/>
                 <LandingCal color={this.state.color}/>
                 <LandingColorTheme />
+                <br></br>
+                <br></br>
                 <ChartJS/>
                 
             </div>

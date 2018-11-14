@@ -42,10 +42,33 @@ class Calendar extends Component {
                 return <div style={{background: 'white'}} className={`day-${item}`}></div>
             }
         })
+        let start = moment().startOf('month').fromNow();
+        let subtract  = parseInt(start.substring(0,2))-1;
+        let beginningDate = moment().subtract(subtract, 'days').format('YYYY-MM-DD');
+        let numberDate = moment(beginningDate).dayOfYear();
+        let arrayTwo = [];
+        for (let i=numberDate; i<=numberDate+30; i++){
+            arrayTwo.push(i)
+        }
+        let displayMonth = this.state.pixalColors && arrayTwo.map(item=>{
+            if (this.state.pixalColors.findIndex(e =>  { 
+                return moment(e.date).dayOfYear() === item
+                }) !== -1){
+                let index = this.state.pixalColors.findIndex(e => moment(e.date).dayOfYear() === item)
+                return <div style={{background: `${this.state.pixalColors[index].mood}`}} className={`day-${item}`}></div>
+            } else if(item === moment().dayOfYear()){
+                return <div style={currentDay} className={`day-${item}`}></div>
+            } else {
+                return <div style={{background: 'white'}} className={`day-${item}`}></div>
+            }
+        })
         return (
            <div className="Calendar">
                 <div className='box'>
                     {display? display: <img src="https://loading.io/spinners/fidget-spinner/lg.fidget-spinner.gif" width='100' alt=''/>}
+                </div>
+                <div className='boxMonth'>
+                    {displayMonth? displayMonth: <img src="https://loading.io/spinners/fidget-spinner/lg.fidget-spinner.gif" width='50' alt=''/>}
                 </div>
            </div> 
         );

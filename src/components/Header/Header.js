@@ -3,7 +3,6 @@ import './Header.css';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {userLogin} from '../../ducks/reducer';
-import moment from 'moment';
 import axios from 'axios';
 
 class Header extends Component {

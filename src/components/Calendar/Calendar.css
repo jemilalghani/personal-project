@@ -18,6 +18,9 @@
   .Calendar .box img {
       margin: 280px auto;
   }
+  .Calendar .boxMonth{
+      display: none;
+  }
 @media screen and (max-width:900px){
         .Calendar .box{
             height: 600px;
@@ -26,5 +29,27 @@
   @media screen and (max-width:800px){
       .Calendar .box{
           height: 600px;
+      }
+  }
+  @media screen and (max-width: 600px){
+      .Calendar .box{
+          display: none;
+      }
+      .Calendar .boxMonth img {
+        margin: 20px auto;
+    }
+      .Calendar .boxMonth{
+        margin: 0 auto;
+        max-width: 50%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));  
+        height:100px;
+      }
+      .Calendar .boxMonth>div{
+        height: 20px;
+        width: 20px;
+        margin: 5px 5px;
+        border: solid rgba(128, 128, 128, 0.651) 1px;
+        box-shadow: 1px 1px rgba(128, 128, 128, 0.151);
       }
   }

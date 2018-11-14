@@ -28,7 +28,7 @@
     margin: auto 200px;
 }
 
-@media (max-width: 1210px) {
+@media (max-width: 900px) {
 
     .weekUserButtons {
         margin: 5px 0;

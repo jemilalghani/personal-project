@@ -97,3 +97,17 @@
     top:30%;
     left:42%;
 }
+@media screen and (max-width: 600px){
+    .themeOne{
+        margin-top: 50px;
+        max-width: 250px;
+    }
+    .themeOne button{
+        padding: 5px 15px; 
+    }
+}
+@media screen and (max-width:500px){
+    .themeOne{
+        margin-top: 150px;
+    }
+}
