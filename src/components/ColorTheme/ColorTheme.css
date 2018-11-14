@@ -1,5 +1,6 @@
 .ColorBox{
-    height: 100px;
+    height: 80px;
+    /* margin-top:10px; */
     width: 100%
 }
 .Emotions p{
@@ -40,4 +41,59 @@
 }
 .themeOne #color-six{
     background-color: rgb(170,43,34);
+}
+.rainbowContainer{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+#rainbow {
+    animation: rainbow 3s infinite; 
+    font-size: 18px;
+    outline-color: aliceblue;
+    border: .5px solid rgba(199, 199, 199, 0.411);
+    font-family: 'VT323', monospace;
+    font-weight: 500;
+    padding:5px;
+ }
+ @keyframes rainbow{
+   0%{color: orange;}	
+   10%{color: purple;}	
+     20%{color: red;}
+     40%{color: yellow;}
+     60%{color: green;}
+     100%{color: blue;}
+     100%{color: orange;}	
+ }
+ 
+ .popup{
+    position: absolute;
+    top:40%;
+    left:50%;
+    box-shadow: .3px .3px 5px rgba(0, 0, 0, 0.514);
+    background: rgba(1, 3, 24, 0.74);
+    border-radius: 5px;
+    /* filter: invert(75%); */
+    /* height: 400px; */
+    /* width: 400px; */
+    /* background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BTrHt7uCiu335hjs/game-over-pixel-art-3d-style-animation-sign-retro-videogame-ending-screen-hd-motion-graphics_hibqbk9rdg_thumbnail-full06.png'); */
+    /* background-position: center; */
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    animation: fadeout 4s;
+    opacity: 0;
+    /* display: none; */
+}
+
+@keyframes fadeout{
+    0%{opacity: 1;}
+    50%{opacity: 1;}
+    /* 80%{filter: blur(0px); border-radius: 0px;} */
+    100%{opacity: 0; display: none;}
+}
+.popupSuccess{
+    position: absolute;
+    top:30%;
+    left:42%;
 }

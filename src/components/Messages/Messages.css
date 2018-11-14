@@ -55,3 +55,17 @@
     border: none;
     position: relative;
   }
+
+  @media screen and (max-width:900px){
+    .Message__text{
+      font-size: 12px;
+    }
+    .Message__time{
+      font-size:10px;
+    }
+    .datecircle-side button{
+      font-size: 8px;
+      margin-left:5px;
+      background: rgba(163, 163, 163, 0.096);
+    }
+  }

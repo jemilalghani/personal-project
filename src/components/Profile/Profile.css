@@ -4,7 +4,7 @@
     align-items: center;
 }
 .Profile{
-    margin-top: 60px;
+    margin-top: 100px;
     top: 50px;
     height: 450px;
     width: 350px;
@@ -153,23 +153,31 @@
  
     }
     .Profile .boxbottom{
-        border-radius: 30px
+        border-radius: 30px;
     }
     .Profile .boxbottom .inputbox{
         margin: 0 auto;
         margin-top: 30px;
         font-size: 15px;
         height: 100px;
+        /* margin-bottom: 1px; */
     }
     .editsaveButton button{
         height: 30px;
         width: 30px;
-        margin-top:10px;
+        margin-top:4px;
+        /* text-align: center; */
+        font-size: 7px;
     }
     .none, .inputNewName input{
         width: 224px;
         height: 20px;
+        margin-bottom: 10px;
     }
 }
-
+@media screen and (max-width: 400px){
+    .Profile{
+        /* margin-top:50px; */
+    }
+}
 

@@ -57,7 +57,7 @@ class Feed extends Component {
                     </div>
                     <div className="buttonFlex">
                         <Cloudinary/>
-                        <button  id="button-two" onClick={()=>this.postMessage()}>Submit</button>
+                        <button  id="button-two" onClick={()=>this.postMessage()}>Post</button>
                     </div>
                 </div>
             </div> 

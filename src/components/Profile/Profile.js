@@ -61,9 +61,9 @@ class Profile extends Component {
                         </div>
                         }
                         <div className="editsaveButton">
-                            <button onClick={this.changeButton}>E</button>
+                            <button onClick={this.changeButton}>Edit</button>
                             {/* {console.log(this.state.buttonClick)} */}
-                            <button className={this.state.buttonClick? '': 'none'} onClick={this.saveUpdate} >S</button>
+                            <button className={this.state.buttonClick? '': 'none'} onClick={this.saveUpdate} >Save</button>
                         </div>
                     </div>
                 </div>

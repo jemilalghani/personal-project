@@ -6,12 +6,19 @@ import {connect} from 'react-redux';
 import UserChartJS from '../UserChartJS/UserChartJS';
 
 class Chart extends Component {
+    constructor(){
+        super();
+        this.state={
+            toggle:false
+        }
+    }
+    toggle = () =>{this.setState((prevState)=>{return{toggle: !prevState.toggle}})}
     render() {
         return (
             <div className="chartPage">
                 {this.props.user? <Calendar/> : ''}
                 <ColorTheme/>
-                <UserChartJS user={this.props.user}/>
+                {this.state.toggle? <UserChartJS user={this.props.user}/> : <footer><div onClick={this.toggle}>analytics</div></footer>}
             </div>
         );
     }

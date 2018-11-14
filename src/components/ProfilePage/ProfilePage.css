@@ -4,7 +4,10 @@
     /* margin-left: 200px; */
     display: flex;
     flex-wrap:wrap; 
+    /* flex-direction: column; */
     justify-content: space-around;
+    margin:auto;
+    /* background: rgba(255, 253, 249, 0.63); */
 }
 .PandF-Child{
     display: flex;

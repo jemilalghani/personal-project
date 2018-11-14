@@ -31,3 +31,8 @@ form>button{
     background: rgb(229,201,190);
     color:black;
 }
+@media screen and (max-width:600px){
+    form>button{
+        background: rgb(170,43,34);
+    }
+}

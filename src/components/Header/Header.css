@@ -7,168 +7,103 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(101, 101, 86, 0.425);
+    background: rgb(190,190,184);
+    z-index: 10;
 }
-.Horizontal a {
-    margin: 60px;
-    /* margin-right: 90px; */
+
+.toggler-header-container a,.headerbutton,.logout  {
+    margin-right: 20px;
     color:  rgb(170,43,34);
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'VT323', monospace;
+    cursor: pointer;
 }
 .Horizontal h1{
     font-family: 'Press Start 2P', cursive;
     margin: 5px;
+    margin-left: 10px;
     color: black;
     text-decoration: none;
     font-size:24px;
 }
-
-.Vertical{
-    width: 180px;
-    height: 100vh;
-    margin-right: 10px;
+.toggler-header-container ul {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* position: fixed; */
-    font-family: 'Press Start 2P', cursive;
-    /* background: rgba(32, 75, 113, 0.575); */
-    background: linear-gradient( rgba(25, 59, 88, 0.904), white);
 }
-.Vertical h1 {
-    margin-top: 40px;
-    margin-bottom: 100px;
-    font-size: 24px; 
-    color: white;
+
+.Horizontal img{
+    display: none;
+} 
+
+.desktop {
+    display: initial;
 }
-.Vertical a{
+
+.toggler {
+    display: none;
+}
+.Horizontal>div a{
+    margin-right: 20px;
+    color:  rgb(170,43,34);
     text-decoration: none;
-    color: black;
-}
-.Vertical .links a{
-    text-decoration: none;
-    margin: 10px;
-    font-size: 12px;
-}
-.Vertical .links button{
-    font-family: 'Press Start 2P', cursive;
-    background: transparent;
-    border: none;
-    font-size: 12px;
-    margin-top: 30px;
+    font-size: 20px;
+    font-family: 'VT323', monospace;
     cursor: pointer;
 }
-.Vertical .links .logout{
-    outline: none;
-    
-}
-.Vertical .links ul {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end
-}
-.rainbowContainer{
-    height: 60px;
-    width: 80px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-#rainbow {
-    margin-top: 20px;
-    margin-right: 10px;
-    animation: rainbow 3s infinite; 
-    font-size: 10px;
-    outline-color: aliceblue;
- }
- @keyframes rainbow{
-   0%{color: orange;}	
-   10%{color: purple;}	
-     20%{color: red;}
-     40%{color: yellow;}
-     60%{color: green;}
-     100%{color: blue;}
-     100%{color: orange;}	
- }
- 
- .popup{
-    position: absolute;
-    top:30%;
-    left:58%;
-    box-shadow: .3px .3px 5px rgba(0, 0, 0, 0.514);
-    background: rgba(1, 3, 24, 0.74);
-    border-radius: 5px;
-    /* filter: invert(75%); */
-    /* height: 400px; */
-    /* width: 400px; */
-    /* background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BTrHt7uCiu335hjs/game-over-pixel-art-3d-style-animation-sign-retro-videogame-ending-screen-hd-motion-graphics_hibqbk9rdg_thumbnail-full06.png'); */
-    /* background-position: center; */
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    animation: fadeout 4s;
-    opacity: 0;
-    /* display: none; */
-}
 
-@keyframes fadeout{
-    0%{opacity: 1;}
-    50%{opacity: 1;}
-    /* 80%{filter: blur(0px); border-radius: 0px;} */
-    100%{opacity: 0; display: none;}
-}
-.popupSuccess{
-    position: absolute;
-    top:20%;
-    left:50%;
+.Horizontal>div>a h1{
+    text-decoration: none;
 }
 
 @media screen and (max-width:900px){
-    .Horizontal{
-        justify-content: center
+
+
+    .toggler {
+        display: initial;
     }
-    .Horizontal a{
+
+    .desktop {
+        display: none;
+    }
+
+    .Horizontal{
+        justify-content: center;
+        height: 60px;
+    }
+    .toggler-header-container a,.headerbutton,.logout{
         font-size: 15px;
         margin: 0;
         color: rgb(170,43,34);
-        margin-left:3px;
+        margin-left: 6px;
     }
-    .Vertical{
-        width:100%;
-        height: 100px;
-        /* width: 100px; */
+    .Horizontal img{
+        display: initial;
+        width: 20px;
+    }
+    .toggler-header-container .links{
         position: fixed;
-        flex-direction: row;
-        background: rgb(25, 59, 88);
-        justify-content: space-around;
-        z-index: 2;
-        box-shadow: 0px 2px 4px rgba(20, 20, 20, 0.61)
+        top: 60px;
+        transition: .3s;
+        opacity: 1;
+        transform: translate(0, 0px);
+        z-index: 1;
     }
-    .Vertical h1{
-        font-size: 15px;
-        margin:0px;
+    .toggler-header-container ul{
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background: rgba(101, 101, 86, 0.425);
+        width: 100vw;
     }
-    .Vertical li{
-       width: 66px;
-       height: 50px;
-       display: flex;
+    .toggler-header-container li{
+        margin: 3px;
     }
-    .Vertical .links ul{
-        flex-direction: row;
-        
-    }
-    .Vertical .links a{
-        font-size: 8px;
-        margin: 0;
-    }
-    .Vertical .links li button{
-        font-size: 7px;
-        margin: auto;
-    }
-    #rainbow{
-        font-size: 8px;
-        margin-right: 0px;
+    .toggler-header-container .nonav {
+        position: fixed;
+        top: 60px;
+        opacity: 0;
+        transform: translate(0, -150px);
+        transition: .3s;
     }
 }
 

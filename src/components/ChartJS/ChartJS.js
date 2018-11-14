@@ -7,8 +7,6 @@ let colorPalette = ['rgb(245,181,107)','rgb(220,108,120)', 'rgb(67,89,148)', 'rg
 let legend = ["joyful", "productive", "average", "unmotivated", "sad", "angry"];
 let dataset = [[29,29,29,29,29,29],[29,30,40,33,27,39],[30,25,36,33,25,22],[15,20,25,18,11,10],[25,20,25,28,20,30]];
 
-
-
 export default class ChartJS extends Component {
     constructor(){
         super();

@@ -16,8 +16,13 @@ module.exports={
            const mailOptions = {
             from: process.env.X, // sender address
             to: email, // list of receivers
-            subject: 'Welcome', // Subject line
-            html: '<p>email content</p>'// plain text body
+            subject: 'Welcome to Yearly', // Subject line
+            html: '<img style="width:600px;" src="cid:yearly@pixelate.top" />',
+            attachments: [{
+                filename:'Group1.png',
+                path: 'server/controllers/Group 1.png',
+                cid:'yearly@pixelate.top'
+            }]
           }
           transporter.sendMail(mailOptions, function (err, info) {
             if(err)

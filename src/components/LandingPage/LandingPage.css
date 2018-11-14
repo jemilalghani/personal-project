@@ -2,3 +2,21 @@
     margin-top:100px;
     flex:1; 
 }
+.LandingPage img{
+    position: absolute;
+    width: 80%;
+    margin: auto;
+    left:50%;
+    transform: translateX(-50%);
+    top: 23%;
+}
+@media (max-width: 900px){
+    .LandingPage img{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 414px){
+    .LandingPage img{
+        width: 130%;
+    }
+}

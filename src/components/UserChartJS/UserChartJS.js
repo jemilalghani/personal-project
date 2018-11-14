@@ -70,7 +70,6 @@ class UserChartJS extends Component {
 
     render() {
         const {barData} = this.state;
-        console.log(this.props.user)
         return (
             <div className="chartjs-container2">
                 <HorizontalBar
@@ -83,7 +82,7 @@ class UserChartJS extends Component {
                     legend: { display: false },
                     maintainAspectRatio: true,
                     scales: {   xAxes: [{ticks: {display: false}, gridLines: {drawBorder: false,display:false}}],
-                                yAxes: [{categoryPercentage: 1.0, gridLines: {display:false}}] 
+                                yAxes: [{categoryPercentage: 1.0, gridLines: {display:false}, ticks: {fontFamily: 'VT323, monospace', fontSize: '15', fontColor: 'black'}}] 
                             }
                 }}/>
                 <div className="weekUserButtons">

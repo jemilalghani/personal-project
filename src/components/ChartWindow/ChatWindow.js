@@ -20,6 +20,7 @@ class ChatWindow extends Component {
     }
     render() {
         return (
+            this.props.messages.length ?
             <div className="chat-container">
                 <div className="chat-parentcontainer">
                 {
@@ -31,6 +32,8 @@ class ChatWindow extends Component {
                 }
                 </div>
             </div>
+            : 
+            null
         );
     }
 }

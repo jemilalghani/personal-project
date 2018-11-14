@@ -45,7 +45,7 @@ class Calendar extends Component {
         return (
            <div className="Calendar">
                 <div className='box'>
-                    {display? display: <img src="https://i.imgur.com/k0jQgLA.gif?noredirect" width='100' alt=''/>}
+                    {display? display: <img src="https://loading.io/spinners/fidget-spinner/lg.fidget-spinner.gif" width='100' alt=''/>}
                 </div>
            </div> 
         );
