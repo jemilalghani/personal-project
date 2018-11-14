@@ -88,7 +88,7 @@
         transition: .3s;
         opacity: 1;
         transform: translate(0, 0px);
-        z-index: 1;
+        z-index: 5;
     }
     .toggler-header-container ul{
         flex-direction: column;
@@ -100,12 +100,19 @@
     .toggler-header-container li{
         margin: 5px;
     }
+    .toggler-header-container .logout{
+        margin-bottom: 8px;
+    }
     .toggler-header-container .nonav {
         position: fixed;
         top: 60px;
         opacity: 0;
         transform: translate(0, -150px);
         transition: .3s;
+    }
+    .Horizontal>div a{
+        font-size: 15px;
+        margin-right: 5px;
     }
 }
 

@@ -1,6 +1,7 @@
 .chartPage {
     flex:1;
     margin-top: 100px;
+    min-height: calc(100vh - 100px)
 }
 footer{
     height: 100px;
@@ -9,10 +10,18 @@ footer{
     background: rgba(25, 59, 88, 0.856);
     display: flex;
     justify-content: center;
+    align-self: flex-end;
+    position: absolute;
+    bottom:0;
 }
 footer>div{
     margin-top: 30px;
     cursor: pointer;
     font-family: 'VT323', monospace;
     color:  rgb(170,43,34);
+}
+@media screen and (max-width:900px){
+    .chartPage{
+        min-height: calc(100vh - 100px);
+    }
 }

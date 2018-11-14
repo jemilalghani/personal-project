@@ -42,10 +42,8 @@ class Calendar extends Component {
                 return <div style={{background: 'white'}} className={`day-${item}`}></div>
             }
         })
-        let start = moment().startOf('month').fromNow();
-        let subtract  = parseInt(start.substring(0,2))-1;
-        let beginningDate = moment().subtract(subtract, 'days').format('YYYY-MM-DD');
-        let numberDate = moment(beginningDate).dayOfYear();
+        const startOfMonth = moment().startOf('month').format('YYYY-MM-DD');
+        let numberDate = moment(startOfMonth).dayOfYear();
         let arrayTwo = [];
         for (let i=numberDate; i<=numberDate+30; i++){
             arrayTwo.push(i)
