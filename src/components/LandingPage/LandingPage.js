@@ -3,7 +3,7 @@ import LandingCal from '../LandingCal/LandingCal';
 import LandingColorTheme from '../ColorTheme/LandingColorTheme';
 import ChartJS from '../ChartJS/ChartJS';
 import './LandingPage.css';
-import banner from './Yearly.svg';
+import banner from './testing.svg';
 
 class LandingPage extends Component {
     constructor(){
