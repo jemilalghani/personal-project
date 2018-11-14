@@ -1,6 +1,8 @@
 .chartPage {
     flex:1;
+    position: relative;
     margin-top: 100px;
+    padding-bottom: 65px;
     min-height: calc(100vh - 100px)
 }
 footer{
