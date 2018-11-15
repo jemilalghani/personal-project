@@ -29,10 +29,18 @@ class Header extends Component {
         sessionStorage.clear();
         this.props.history.push('/');
     }
-
+    componentWillMount(){
+        document.addEventListener('click', this.handleClick, false)
+    }
+    handleClick=(e)=>{
+        if(this.node.contains(e.target)){
+            return; 
+        }
+        this.setState({toggle: false})
+    }
     email(){
+        alert('Email Sent')
         this.props.user && axios.post('/api/email', {email: this.props.user.email}).then(()=>{
-            alert('Email Sent')
         })
     }
     render() {
@@ -42,11 +50,10 @@ class Header extends Component {
         return (
             this.props.pathname !== '/' ? 
             (
-            <div className='toggler-header-container'>
+            <div className='toggler-header-container' ref={node=>this.node = node}>
                 <div className='Horizontal'>
                     {user? <Link to='/chart'><h1>YEARLY</h1></Link> : <Link to='/'><h1>YEARLY</h1></Link>}
                     <img onClick={this.toggle} src="http://www.stickpng.com/assets/images/588a64f5d06f6719692a2d13.png" width='25' alt=''/>
-
                     <div className="desktop">
                         <ul>
                             <Link to= '/profile'><li>Profile</li></Link>
