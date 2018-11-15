@@ -30,6 +30,7 @@ class Header extends Component {
         this.props.history.push('/');
     }
     componentWillMount(){
+        document.addEventListener('touchend', this.handleClick, false)
         document.addEventListener('click', this.handleClick, false)
     }
     handleClick=(e)=>{
