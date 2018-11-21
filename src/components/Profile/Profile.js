@@ -9,11 +9,13 @@ class Profile extends Component {
         super();
         this.state={
             buttonClick: false,
-            text:''
+            text:'',
+            quote: null
         }
         this.changeButton = this.changeButton.bind(this);
         this.saveUpdate=this.saveUpdate.bind(this);
         this.handleChange=this.handleChange.bind(this);
+        this.setQuote = this.setQuote.bind(this)
     }
     componentDidMount(){
         Axios.get('/api/me').then(res=>{
@@ -21,6 +23,7 @@ class Profile extends Component {
         }).catch(error=>{
             console.log('error in mount', error)
         })
+        this.setQuote()
     }
     changeButton(){
         this.setState((prevState)=>{return{buttonClick: !prevState.buttonClick}})
@@ -38,7 +41,21 @@ class Profile extends Component {
     handleChange(e){
         this.setState({text:e.target.value})
     }
+    setQuote(){
+        console.log('fired')
+        var now = new Date();
+        var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 10, 0, 0, 0) - now;
+        if (millisTill10 < 0) {
+            millisTill10 += 86400000; // it's after 10am, try 10am tomorrow.
+        }
+        setInterval(()=>{
+            Axios.get('https://quotes.rest/qod.json').then(res=>{
+                this.setState({quote: res.data.contents.quotes[0].quote})
+            })
+        }, millisTill10)
+}
     render() {
+        console.log(this.state.quote)
         return (
             <div className="flexProfile">
                 <div className="Profile">
@@ -57,7 +74,7 @@ class Profile extends Component {
                         <div className="inputbox">
                             <h3>{this.props.user.name}</h3>
                             <h3>{this.props.user.email}</h3>
-                            <p>“ Yesterday is not ours to recover, but tomorrow is ours to win or lose.”</p>
+                            <p>{this.state.quote ? `"${this.state.quote}"` :  "Yesterday is not ours to recover, but tomorrow is ours to win or lose."}</p>
                         </div>
                         }
                         <div className="editsaveButton">

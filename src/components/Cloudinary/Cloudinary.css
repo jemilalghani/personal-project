@@ -2,20 +2,13 @@
     height: 50px;
     width: 80px;
     border: black dashed 1px;
-    /* background: red */
     display: flex;
     align-items: center;
     text-align: center;
     border-radius: 5px;
     overflow: hidden;
-    /* margin-bottom: 10px; */
+    cursor: pointer;
 }
-/* .Cloudinary img {
-    margin-top: 22px;
-    height: 50px;
-    width: 80px;
-    margin-bottom: 5px;
-} */
 .Cloudinary p {
     font-family: 'VT323', monospace;
     font-size: 15px;
@@ -28,11 +21,7 @@ form>button{
     height: 20px;
     border: none;
     outline: none;
-    background: rgb(229,201,190);
+    background: rgb(170,43,34);
     color:black;
-}
-@media screen and (max-width:600px){
-    form>button{
-        background: rgb(170,43,34);
-    }
+    cursor: pointer;
 }

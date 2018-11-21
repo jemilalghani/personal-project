@@ -4,7 +4,7 @@
 }
 .LandingPage img{
     position: absolute;
-    width: 80%;
+    width: 75%;
     margin: auto;
     left:50%;
     transform: translateX(-50%);

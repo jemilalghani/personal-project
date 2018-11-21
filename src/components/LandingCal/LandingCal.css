@@ -1,11 +1,11 @@
-.Calendar{
-    max-width: 700px;
+.Calendarone{
+    max-width: 600px;
     margin: 0 auto;
 }
-.Calendar .boxone{
+.Calendarone .boxone{
     max-width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));  
+    grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));  
 }
 /* .Calendar .boxone>div{
     animation: rainbowtwo 3s;
@@ -24,22 +24,22 @@
 /* .box .day-23{
     background: pink;
 } */
-.Calendar .boxone>div{
-    height: 20px;
-    width: 20px;
-    margin: 5px 5px;
+.Calendarone .boxone>div{
+    height: 17px;
+    width: 17px;
+    margin: 4px 4px;
     border: solid rgba(128, 128, 128, 0.651) 1px;
     box-shadow: 1px 1px rgba(128, 128, 128, 0.151);
     /* background: white; */
   }
 
   @media screen and (max-width: 414px){
-    .Calendar .boxone{
+    .Calendarone .boxone{
         max-width: 100%;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));  
     }
-    .Calendar .boxone>div{
+    .Calendarone .boxone>div{
         height: 10px;
         width: 10px;
         margin: 2px 2px; 

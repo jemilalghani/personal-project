@@ -22,7 +22,7 @@ class Calendar extends Component {
             }
         })
         return (
-           <div className="Calendar">
+           <div className="Calendarone">
                 <div className='boxone'>
                     {display}
                 </div>

@@ -31,7 +31,6 @@ class Header extends Component {
     }
     componentWillMount(){
         document.addEventListener('touchend', this.handleClick, false)
-        document.addEventListener('click', this.handleClick, false)
     }
     handleClick=(e)=>{
         if(this.node.contains(e.target)){
@@ -45,6 +44,7 @@ class Header extends Component {
         })
     }
     render() {
+        console.log(this.props)
         const {user} = this.props;
         const redirect_uri = encodeURIComponent(window.location.origin+'/auth/callback');
         const url = `https://${process.env.REACT_APP_AUTH0_DOMAIN}/authorize?client_id=${process.env.REACT_APP_AUTH0_CLIENT_ID}&scope=openid%20profile%20email&redirect_uri=${redirect_uri}&response_type=code`;
@@ -57,9 +57,9 @@ class Header extends Component {
                     <img onClick={this.toggle} src="http://www.stickpng.com/assets/images/588a64f5d06f6719692a2d13.png" width='25' alt=''/>
                     <div className="desktop">
                         <ul>
-                            <Link to= '/profile'><li>Profile</li></Link>
-                            <Link to= '/chart'><li>Calendar</li></Link>
-                            <li><div className= "headerbutton" onClick={()=>this.email()}>Click Me!</div></li>
+                            <Link to= '/profile'><li className={this.props.pathname === '/profile'? 'white' : ''}>Profile</li></Link>
+                            <Link to= '/chart'><li className={this.props.pathname === '/chart'? 'white' : ''} >Calendar</li></Link>
+                            <li><div className= "headerbutton" onClick={()=>this.email()}>Email Me!</div></li>
                             <li><div className="logout" onClick={()=>this.logout()}>Logout</div></li>
                         </ul>
                     </div>
@@ -71,7 +71,7 @@ class Header extends Component {
                         <ul>
                             <Link to= '/profile'><li>Profile</li></Link>
                             <Link to= '/chart'><li>Calendar</li></Link>
-                            <li><div className= "headerbutton" onClick={()=>this.email()}>Click Me!</div></li>
+                            <li><div className= "headerbutton" onClick={()=>this.email()}>Email Me!</div></li>
                             <li><div className="logout" onClick={()=>this.logout()}>Logout</div></li>
                         </ul>
                 </div>

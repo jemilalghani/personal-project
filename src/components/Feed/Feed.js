@@ -53,7 +53,7 @@ class Feed extends Component {
                 <div className="Write">
                     <div className="circleandtext">
                         <div style={emotCircle} className="emotCircle"></div>
-                        <textarea placeholder="  Messages will not display until you finalize your color" value={this.state.text} onChange={this.handleChange} className={this.state.color? 'red' : ''}></textarea>
+                        <textarea placeholder="WARNING: messages will not display without a finialized mood" value={this.state.text} onChange={this.handleChange} className={this.state.color? 'red' : ''}></textarea>
                     </div>
                     <div className="buttonFlex">
                         <Cloudinary/>
