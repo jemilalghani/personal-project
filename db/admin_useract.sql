@@ -1,0 +1,1 @@
+select count(*) from pixals group by user_id order by count desc limit 3;

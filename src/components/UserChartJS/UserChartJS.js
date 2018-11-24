@@ -57,6 +57,7 @@ class UserChartJS extends Component {
         this.clear();
         this.getPixals()
         this.checkDatabase(day);
+        this.setState({day})
     }
     pushToDataSet(day){
         dataset.push(day.filter(item=>item==='rgb(245,181,107)').length);
@@ -86,13 +87,13 @@ class UserChartJS extends Component {
                             }
                 }}/>
                 <div className="weekUserButtons">
-                    <button onClick={()=>this.dayOfWeek(Monday)}>Monday</button>
-                    <button onClick={()=>this.dayOfWeek(Tuesday)}>Tuesday</button>
-                    <button onClick={()=>this.dayOfWeek(Wednesday)}>Wednesday</button>
-                    <button onClick={()=>this.dayOfWeek(Thursday)}>Thursday</button>
-                    <button onClick={()=>this.dayOfWeek(Friday)}>Friday</button>
-                    <button onClick={()=>this.dayOfWeek(Saturday)}>Saturday</button>
-                    <button onClick={()=>this.dayOfWeek(Sunday)}>Sunday</button>
+                    <button onClick={()=>this.dayOfWeek(Monday)} style={{color: this.state.day === Monday && 'rgb(67,89,150)'}}>Monday</button>
+                    <button onClick={()=>this.dayOfWeek(Tuesday)} style={{color: this.state.day === Tuesday && 'rgb(67,89,150)'}}>Tuesday</button>
+                    <button onClick={()=>this.dayOfWeek(Wednesday)} style={{color: this.state.day === Wednesday && 'rgb(67,89,150)'}}>Wednesday</button>
+                    <button onClick={()=>this.dayOfWeek(Thursday)} style={{color: this.state.day === Thursday && 'rgb(67,89,150)'}}>Thursday</button>
+                    <button onClick={()=>this.dayOfWeek(Friday)} style={{color: this.state.day === Friday && 'rgb(67,89,150)'}}>Friday</button>
+                    <button onClick={()=>this.dayOfWeek(Saturday)} style={{color: this.state.day === Saturday && 'rgb(67,89,150)'}}>Saturday</button>
+                    <button onClick={()=>this.dayOfWeek(Sunday)} style={{color: this.state.day === Sunday && 'rgb(67,89,150)'}}>Sunday</button>
                 </div>
                 <Doughnut
                     data={barData}

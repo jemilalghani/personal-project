@@ -44,7 +44,7 @@ class Profile extends Component {
     setQuote(){
         console.log('fired')
         var now = new Date();
-        var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 10, 0, 0, 0) - now;
+        var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 5, 0, 0, 0) - now;
         if (millisTill10 < 0) {
             millisTill10 += 86400000; // it's after 10am, try 10am tomorrow.
         }
@@ -74,7 +74,7 @@ class Profile extends Component {
                         <div className="inputbox">
                             <h3>{this.props.user.name}</h3>
                             <h3>{this.props.user.email}</h3>
-                            <p>{this.state.quote ? `"${this.state.quote}"` :  "Yesterday is not ours to recover, but tomorrow is ours to win or lose."}</p>
+                            <p>{this.state.quote ? `"${this.state.quote}"` :  `"Yesterday is not ours to recover, but tomorrow is ours to win or lose."`}</p>
                         </div>
                         }
                         <div className="editsaveButton">

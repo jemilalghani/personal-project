@@ -2,11 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const massive = require('massive');
+
 require('dotenv').config();
+
 const userController = require('./controllers/userController');
 const authController = require('./controllers/authController');
 const pixalController = require('./controllers/pixalController');
 const messageController = require('./controllers/messageController');
+const adminController = require('./controllers/adminController');
 
 const app = express();
 app.use(bodyParser.json());
@@ -37,6 +40,12 @@ app.post('/api/messages/:user_id', messageController.create);
 app.delete('/api/messages/:user_id/:id', messageController.delete);
 
 app.post('/api/email', userController.sendEmail);
+
+app.post('/api/login', adminController.login);
+app.post('/api/register', adminController.register);
+app.post('/api/adminlogout', adminController.logout);
+app.get('/api/count', adminController.count);
+app.get('/api/usercount', adminController.useract);
 
 // app.get('http://quotes.rest/qod.json');
 

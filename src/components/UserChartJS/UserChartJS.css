@@ -12,17 +12,19 @@
     display: block;
 }
 .weekUserButtons button{
-    background: rgba(101, 101, 86, 0.6);
+    /* background: rgba(101, 101, 86, 0.6); */
     border: none;
     padding: 5px;
     margin: 2px;
     cursor: pointer;
-    color: white;
+    /* color: white; */
     outline: none;
     font-family: 'VT323', monospace;
     font-size: 15px;
     display: flex;
-    
+}
+.weekUserButtons .highlighted button{
+    color: rgb(67,89,148);
 }
 .weekUserButtons {
     margin: auto 200px;

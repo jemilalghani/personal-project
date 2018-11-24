@@ -85,3 +85,10 @@ insert into pixals (user_id, date, mood) values (1,'2018-11-02', 'rgb(220,108,12
 insert into pixals (user_id, date, mood) values (1,'2018-10-09', 'rgb(220,108,120)');
 insert into pixals (user_id, date, mood) values (1,'2018-10-10', 'rgb(245,181,107)');
 insert into pixals (user_id, date, mood) values (1,'2018-10-02', 'rgb(170,43,34)');
+
+-- 
+CREATE TABLE admin (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR UNIQUE,
+  password VARCHAR
+);

@@ -44,11 +44,15 @@ class Header extends Component {
         })
     }
     render() {
-        console.log(this.props)
         const {user} = this.props;
         const redirect_uri = encodeURIComponent(window.location.origin+'/auth/callback');
         const url = `https://${process.env.REACT_APP_AUTH0_DOMAIN}/authorize?client_id=${process.env.REACT_APP_AUTH0_CLIENT_ID}&scope=openid%20profile%20email&redirect_uri=${redirect_uri}&response_type=code`;
         return (
+            this.props.pathname === '/admin' ?
+            <div className="Horizontal">
+                <h1>YEARLY</h1>
+            </div>
+            :
             this.props.pathname !== '/' ? 
             (
             <div className='toggler-header-container' ref={node=>this.node = node}>
