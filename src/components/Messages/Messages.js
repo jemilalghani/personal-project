@@ -7,7 +7,6 @@ class Messages extends Component {
         const style= {
             background: this.props.mood
         }
-        console.log(this.props.user.id)
         return (
         <div className="Message__container">
             <div className="dateCircle">

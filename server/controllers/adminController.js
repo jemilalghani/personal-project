@@ -48,5 +48,26 @@ module.exports={
         db.admin_useract().then(counts=>{
             res.status(200).json(counts)
         })
+    }, 
+    submittedToday: (req, res)=>{
+        const db = req.app.get('db');
+        db.admin_submit([req.params.date]).then(emails=>{
+            res.status(200).json(emails)
+        }).catch(error=>{
+            console.log('error in get admin get submitted', error)
+        })
+    },
+    emailusers: (req,res)=>{
+        const db=req.app.get('db');
+        db.admin_mailing([req.params.emailOne, req.params.emailTwo]).then(emails=>{
+            res.status(200).json(emails)
+        }).catch(error=>{
+            console.log('error in get admin get emails to email', error)
+        })
+    },
+    users:(req,res)=>{
+        req.app.get('db').admin_users().then(users=>{
+            res.status(200).json(users)
+        })
     }
 }

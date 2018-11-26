@@ -11,6 +11,10 @@ import {connect} from 'react-redux';
 class ProfilePage extends Component {
     constructor(){
         super();
+        this.state={
+            quote: null,
+            text: '',
+        }
         // this.getMessages = this.getMessages.bind(this);
         this.getMessage = this.getMessage.bind(this);
         this.componentDidMount = this.componentDidMount.bind(this);
@@ -23,10 +27,23 @@ class ProfilePage extends Component {
     componentDidMount(){
         this.getMessage()
     }
+    getQuote= ()=>{
+        Axios.get('https://quotes.rest/qod.json').then(res=>{
+                this.setState({quote: res.data.contents.quotes[0].quote})
+        }).catch(error=>{
+            this.setState({error: error})
+        })
+    }
+    handleChange=(e)=>{
+        this.setState({quote:e.target.value})
+    }
     render() {
         return (
             <div className="PandF">
-                <Profile/>
+                <div>
+                    <Profile/>
+                    {this.state.quote ? this.state.error ? <input onChange={this.handleChange} placeholder="What's a quote you live by?"></input> : <p className="axioscall">"{this.state.quote}"</p> : <button className="axioscallbutton"onClick={this.getQuote}> Quote of the Day </button>}
+                </div>
                 <div className="PandF-Child">
                     <Feed getMessages={this.getMessage}/>
                     {this.props.user && <ChatWindow getMessages={this.getMessage} userId={this.props.user.id}/>}

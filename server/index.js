@@ -46,6 +46,9 @@ app.post('/api/register', adminController.register);
 app.post('/api/adminlogout', adminController.logout);
 app.get('/api/count', adminController.count);
 app.get('/api/usercount', adminController.useract);
+app.get('/api/email/:date', adminController.submittedToday);
+app.get('/api/emailusers/:emailOne/:emailTwo', adminController.emailusers);
+app.get('/api/users', adminController.users);
 
 // app.get('http://quotes.rest/qod.json');
 

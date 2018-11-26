@@ -13,6 +13,30 @@
     flex-direction: column;
     align-items: center;
 }
+.PandF>div{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+.PandF .axioscallbutton{
+    font-family: 'VT323', monospace;
+    padding: 10px 15px;
+    background: black;
+    color: white;
+    border: none;
+    margin-top: 10px;
+}
+.PandF .axioscall{
+    max-width: 300px;
+    font-size: 15px;
+    font-family: 'VT323', monospace;
+}
+@media screen and (max-width: 1109px){
+    .PandF .axioscall{
+        max-width: 80%
+    }
+}
 @media screen and (max-width:900px){
     .PandF{
         width: 100%

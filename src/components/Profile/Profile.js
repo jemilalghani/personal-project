@@ -42,7 +42,6 @@ class Profile extends Component {
         this.setState({text:e.target.value})
     }
     setQuote(){
-        console.log('fired')
         var now = new Date();
         var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 5, 0, 0, 0) - now;
         if (millisTill10 < 0) {
@@ -55,7 +54,6 @@ class Profile extends Component {
         }, millisTill10)
 }
     render() {
-        console.log(this.state.quote)
         return (
             <div className="flexProfile">
                 <div className="Profile">

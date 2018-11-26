@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Admin.css';
+import moment from 'moment';
 
 
 export default class Admin extends Component {
@@ -13,20 +14,28 @@ export default class Admin extends Component {
             count: null,
             percentOne: '0%',
             percentTwo: '0%',
-            percentThree: '0%'
+            percentThree: '0%',
+            green: null
         }
     }
     async componentDidMount(){
         const count = await axios('/api/count');
-        const percents = await axios('/api/usercount')
-        let one = (percents.data[0].count / 365)*100
-        let two = (percents.data[1].count / 365)*100
-        let three = (percents.data[2].count / 365)*100
+        const percents = await axios('/api/usercount');
+        const users = await axios('/api/users');
+        const todayUser = await axios(`/api/email/${moment().format('YYYY-MM-DD')}`)
+        let one = (percents.data[0].count / 366)*100
+        let two = (percents.data[1].count / 366)*100
+        let three = (percents.data[2].count / 366)*100
         this.setState({count: count.data[0].count})
         this.setState({
             percentOne: `${one}%`,
             percentTwo: `${two}%`,
-            percentThree: `${three}%`
+            percentThree: `${three}%`,
+            one: percents.data[0].count,
+            two: percents.data[1].count,
+            three: percents.data[2].count,
+            users: users,
+            green: todayUser.data
         })
     }
     handleChange(key, e){
@@ -44,6 +53,7 @@ export default class Admin extends Component {
           this.setState({ message: this.getMessage(error) });
           console.log(error)
         });
+        this.setState({message: null})
       }
       logout =()=>{
           axios.post('/api/adminlogout').then(res=>{
@@ -53,6 +63,21 @@ export default class Admin extends Component {
       }
       getMessage = error => error.response ? error.response.data ? error.response.data.message: JSON.stringify(error.response.data, null, 2): error.message;
       render() {
+          let display = this.state.users && this.state.users.data.map((user, i)=>{
+                    return <div key={i} className="users">
+                                {i+1}.
+                                <p>{user.name}</p>
+                                <p>{user.email}</p>
+                            </div>
+                }
+          )
+          let activity = this.state.green && this.state.green.map((el, i)=>{
+            return <div key={i} className="users">
+                        {i+1}.
+                        <p>{el.name}</p>
+                        <p>{el.email}</p>
+                    </div>
+          })
           return (
               this.state.user ? 
                 <div className="AdminPage">
@@ -61,14 +86,22 @@ export default class Admin extends Component {
                     
                     <div className="barcontainer">
                         <div className="bar" style={{height:"24px",width:this.state.percentOne}}></div>
+                        <p>{this.state.one}/366</p>
                     </div>
                     <div className="barcontainer">
                         <div className="bar" style={{height:"24px",width:this.state.percentTwo}}></div>
+                        <p>{this.state.two}/366</p>
                     </div>
                     <div className="barcontainer">
                         <div className="bar" style={{height:"24px",width:this.state.percentThree}}></div>
+                        <p>{this.state.three}/366</p>
                     </div>
-    
+                    <div className="userContainer">
+                        {display}
+                    </div>
+                    <div>
+                        {activity}
+                    </div>
                     <button onClick={this.logout}>Logout</button>
 
                 </div>

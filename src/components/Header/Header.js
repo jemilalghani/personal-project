@@ -31,6 +31,7 @@ class Header extends Component {
     }
     componentWillMount(){
         document.addEventListener('touchend', this.handleClick, false)
+        // document.addEventListener('click', this.handleClick, false)
     }
     handleClick=(e)=>{
         if(this.node.contains(e.target)){
@@ -42,6 +43,7 @@ class Header extends Component {
         alert('Email Sent')
         this.props.user && axios.post('/api/email', {email: this.props.user.email}).then(()=>{
         })
+        this.setState({toggle: false})
     }
     render() {
         const {user} = this.props;
@@ -50,7 +52,7 @@ class Header extends Component {
         return (
             this.props.pathname === '/admin' ?
             <div className="Horizontal">
-                <h1>YEARLY</h1>
+                <Link to='/'><h1>YEARLY</h1></Link>
             </div>
             :
             this.props.pathname !== '/' ? 
@@ -73,8 +75,8 @@ class Header extends Component {
 
                 <div className={this.state.toggle ? 'toggler links': "toggler nonav"}>
                         <ul>
-                            <Link to= '/profile'><li>Profile</li></Link>
-                            <Link to= '/chart'><li>Calendar</li></Link>
+                            <Link to= '/profile'><li onClick={this.toggle}>Profile</li></Link>
+                            <Link to= '/chart'><li onClick={this.toggle}>Calendar</li></Link>
                             <li><div className= "headerbutton" onClick={()=>this.email()}>Email Me!</div></li>
                             <li><div className="logout" onClick={()=>this.logout()}>Logout</div></li>
                         </ul>
