@@ -8,7 +8,7 @@ export default class Admin extends Component {
     constructor(){
         super();
         this.state={
-            user: true,
+            user: null,
             username: null,
             password: null,
             count: null,
