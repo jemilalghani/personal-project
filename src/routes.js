@@ -11,6 +11,6 @@ export default (
         <Route path='/chart' component={ChartPage}/>
         <Route path='/profile' component={ProfilePage}/>
         <Route path='/admin' component={Admin}/>
-        <Route path='/' component={LandingPage}/>
+        <Route exact path='/' component={LandingPage}/>
     </Switch>
 )
