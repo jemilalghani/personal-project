@@ -98,11 +98,14 @@ class Header extends Component {
                   Calendar
                 </li>
               </Link>
-              <li>
-                <div className="headerbutton" onClick={() => this.email()}>
-                  Email Me!
-                </div>
-              </li>
+              <Link id="linktoo" to="/history">
+                <li
+                  onClick={this.toggle}
+                  className={this.props.pathname === "/history" ? "white" : ""}
+                >
+                  History
+                </li>
+              </Link>
               <li>
                 <div className="logout" onClick={() => this.logout()}>
                   Logout
@@ -120,11 +123,9 @@ class Header extends Component {
             <Link to="/chart">
               <li onClick={this.toggle}>Calendar</li>
             </Link>
-            <li>
-              <div className="headerbutton" onClick={() => this.email()}>
-                Email Me!
-              </div>
-            </li>
+            <Link to="/history">
+              <li onClick={this.toggle}>History</li>
+            </Link>
             <li>
               <div className="logout" onClick={() => this.logout()}>
                 Logout

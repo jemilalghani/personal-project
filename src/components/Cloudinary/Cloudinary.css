@@ -1,27 +1,43 @@
-.Cloudinary{
-    height: 50px;
-    width: 80px;
-    border: black dashed 1px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    border-radius: 5px;
-    overflow: hidden;
-    cursor: pointer;
+.Cloudinary {
+  cursor: pointer;
+  width: 500px;
+  display: flex;
+  margin: 3px 0 10px 40px;
+}
+.attach {
+  width: 500px;
+  display: flex;
+  /* background: blue; */
+  /* justify-content: space-between; */
+  flex-direction: row;
+}
+.clip {
+  height: 20px;
+  justify-content: flex-start;
+}
+.attach > div {
+  width: 100px;
+  display: flex;
+  margin-left: 10px;
 }
 .Cloudinary p {
-    font-family: 'VT323', monospace;
-    font-size: 15px;
-    padding: 5px;
+  font-family: "VT323", monospace;
+  font-size: 15px;
+  /* padding: 5px; */
+}
+.delete-icon {
+  height: 20px;
+  margin-left: 5px;
 }
 form {
-    display:flex;
+  display: flex;
+  /* justify-content: flex-end; */
 }
-form>button{
-    height: 20px;
-    border: none;
-    outline: none;
-    background: rgb(170,43,34);
-    color:black;
-    cursor: pointer;
+form > button {
+  height: 10px;
+  border: none;
+  outline: none;
+  background: rgb(170, 43, 34);
+  color: black;
+  cursor: pointer;
 }

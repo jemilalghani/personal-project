@@ -1,71 +1,72 @@
 .Message__container {
-    width: calc(100% - 30px);
-    height: 100vi;
-    padding: 5px 10px;
-    background: #fff;
-    border-radius: 3px;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-    margin-bottom: 10px;
-    /* z-index: -1; */
-  }
-  
-  .Message__time {
-    margin-top:5px;
-    top: 10px;
-    left: 10px;
-    font-size: 12px;
-    opacity: 0.5;
-    font-family: 'VT323', monospace;
-  }
-  
+  width: calc(100% - 30px);
+  height: 100vi;
+  padding: 5px 10px;
+  background: #fff;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  border: solid rgb(182, 180, 178) 0.55px;
+  /* box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2); */
+  margin-bottom: 10px;
+  /* z-index: -1; */
+}
+
+.Message__time {
+  margin-top: 5px;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+  opacity: 0.5;
+  font-family: "VT323", monospace;
+}
+
+.Message__text {
+  margin-top: 5px;
+  bottom: 10px;
+  left: 10px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  padding-bottom: 10px;
+  font-family: "VT323", monospace;
+  font-size: 15px;
+}
+.dateCircle {
+  /* margin-top:5px; */
+  display: flex;
+  /* margin-bottom: 10px; */
+  justify-content: space-between;
+}
+
+.datecircle-side {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: flex-start;
+}
+.circle {
+  margin-top: 5px;
+  margin-right: 10px;
+  height: 10px;
+  width: 10px;
+  border-radius: 10px;
+}
+.datecircle-side button {
+  border: none;
+  position: relative;
+}
+
+@media screen and (max-width: 900px) {
   .Message__text {
-    margin-top: 5px;
-    bottom: 10px;
-    left: 10px;
-    word-wrap: break-word;
-    white-space: pre-wrap;
-    padding-bottom: 10px;
-    font-family: 'VT323', monospace;
-    font-size: 15px;
+    font-size: 12px;
   }
-  .dateCircle{
-    /* margin-top:5px; */
-    display: flex;
-    /* margin-bottom: 10px; */
-    justify-content: space-between;
-  }
-  
-  .datecircle-side{
-    position: relative;
-    z-index: 5;
-    display: flex;
-    align-items:flex-start;
-  }
-  .circle{
-    margin-top: 5px;
-    margin-right: 10px;
-    height: 10px;
-    width:10px;
-    border-radius: 10px;
+  .Message__time {
+    font-size: 10px;
   }
   .datecircle-side button {
-    border: none;
-    position: relative;
+    font-size: 8px;
+    margin-left: 5px;
+    background: rgba(163, 163, 163, 0.096);
   }
-
-  @media screen and (max-width:900px){
-    .Message__text{
-      font-size: 12px;
-    }
-    .Message__time{
-      font-size:10px;
-    }
-    .datecircle-side button{
-      font-size: 8px;
-      margin-left:5px;
-      background: rgba(163, 163, 163, 0.096);
-    }
-  }
+}
