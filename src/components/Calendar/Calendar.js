@@ -78,9 +78,12 @@ class Calendar extends Component {
             );
           }) !== -1
         ) {
-          let index = this.state.pixalColors.findIndex(
-            e => moment(e.date).dayOfYear() === item
-          );
+          let index = this.state.pixalColors.findIndex(e => {
+            return (
+              e.date.substring(0, 4) == moment().format("YYYY") &&
+              moment(e.date).dayOfYear() === item
+            );
+          });
           return (
             <div
               style={{ background: `${this.state.pixalColors[index].mood}` }}
@@ -167,9 +170,12 @@ class Calendar extends Component {
             );
           }) !== -1
         ) {
-          let index = this.state.pixalColors.findIndex(
-            e => moment(e.date).dayOfYear() === item
-          );
+          let index = this.state.pixalColors.findIndex(e => {
+            return (
+              e.date.substring(0, 4) == moment().format("YYYY") &&
+              moment(e.date).dayOfYear() === item
+            );
+          });
           return (
             <div
               style={{ background: `${this.state.pixalColors[index].mood}` }}
@@ -194,8 +200,8 @@ class Calendar extends Component {
             display
           ) : (
             <img
-              src="https://loading.io/spinners/fidget-spinner/lg.fidget-spinner.gif"
-              width="100"
+              src="https://www.infinitycruises.co.uk/wp-content/themes/enfold-child/images/ship_steer_wheel3.gif"
+              width="200"
               alt=""
             />
           )}
@@ -205,8 +211,8 @@ class Calendar extends Component {
             displayMonth
           ) : (
             <img
-              src="https://loading.io/spinners/fidget-spinner/lg.fidget-spinner.gif"
-              width="50"
+              src="https://www.infinitycruises.co.uk/wp-content/themes/enfold-child/images/ship_steer_wheel3.gif"
+              width="100"
               alt=""
             />
           )}

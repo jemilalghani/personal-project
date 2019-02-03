@@ -1,127 +1,163 @@
-.Horizontal{
-    width: 100%;
-    height: 60px;
-    margin-bottom: 10px;
-    position:fixed;
-    top: 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(101, 101, 86, 0.425);
-    z-index: 10;
+.Horizontal {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 10px;
+  position: fixed;
+  top: 0px;
+  background: white;
+  padding-bottom: 40px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* background: rgba(101, 101, 86, 0.425); */
+  z-index: 10;
+  /* text-align: center; */
 }
 
-.toggler-header-container a,.headerbutton,.logout  {
-    margin-right: 20px;
-    color: rgb(170,43,34);
-    text-decoration: none;
-    font-size: 18px;
-    font-family: 'VT323', monospace;
-    cursor: pointer;
+.toggler-header-container > a,
+.headerbutton,
+#linktoo {
+  margin-right: 30px;
+  color: rgb(112, 112, 112);
+  /* margin: auto; */
+  text-decoration: none;
+  font-size: 15px;
+  font-family: "VT323", monospace;
+  cursor: pointer;
 }
-.Horizontal h1{
-    font-family: 'Press Start 2P', cursive;
-    margin: 5px;
-    margin-left: 10px;
-    color: black;
-    text-decoration: none;
-    font-size:24px;
+.logout {
+  color: rgb(112, 112, 112);
+  /* margin: auto; */
+  text-decoration: none;
+  font-size: 15px;
+  font-family: "VT323", monospace;
+  cursor: pointer;
+}
+a {
+  /* margin-right: 10px; */
+  color: rgb(112, 112, 112);
+  /* margin: auto; */
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "VT323", monospace;
+  cursor: pointer;
+}
+.Horizontal h1 {
+  font-family: "VT323", monospace;
+  margin-top: 10px;
+  /* margin-left: 10px; */
+  color: rgb(112, 112, 112);
+  text-decoration: none;
+  font-size: 60px;
+  text-align: center;
 }
 .toggler-header-container ul {
-    display: flex;
+  display: flex;
+  justify-content: center;
 }
 
-.Horizontal img{
-    display: none;
-} 
+.Horizontal img {
+  display: none;
+}
 
 .desktop {
-    display: initial;
+  display: initial;
 }
 
 .toggler {
+  display: none;
+}
+.Horizontal > div .login {
+  margin-right: 20px;
+  color: rgb(112, 112, 112);
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "VT323", monospace;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background: white;
+}
+.Horizontal > div p {
+  font-family: "VT323", monospace;
+  color: rgb(129, 117, 109);
+  font-size: 15px;
+  margin: 5px 0 0 20px;
+  background: white;
+}
+.Horizontal > div .white {
+  /* margin-right: 20px; */
+  color: black;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: "VT323", monospace;
+  cursor: pointer;
+}
+.Horizontal > a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 900px) {
+  .Horizontal {
+    background: rgb(190, 190, 184);
+  }
+
+  .toggler {
+    display: initial;
+  }
+
+  .desktop {
     display: none;
+  }
+
+  .Horizontal {
+    justify-content: center;
+    height: 60px;
+  }
+  .toggler-header-container a,
+  .headerbutton,
+  .logout {
+    font-size: 15px;
+    margin: 0;
+    color: rgb(170, 43, 34);
+    margin-left: 6px;
+  }
+  .Horizontal img {
+    display: initial;
+    width: 20px;
+  }
+  .toggler-header-container .links {
+    position: fixed;
+    top: 60px;
+    transition: 0.3s;
+    opacity: 1;
+    transform: translate(0, 0px);
+    z-index: 9;
+  }
+  .toggler-header-container ul {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgb(190, 190, 184);
+    width: 100vw;
+  }
+  .toggler-header-container li {
+    margin: 5px;
+  }
+  .toggler-header-container .logout {
+    margin-bottom: 8px;
+  }
+  .toggler-header-container .nonav {
+    position: fixed;
+    top: 60px;
+    opacity: 0;
+    transform: translate(0, -150px);
+    transition: 0.3s;
+    /* z-index: 9; */
+  }
+  .Horizontal > div a {
+    font-size: 15px;
+    margin-right: 5px;
+  }
 }
-.Horizontal>div a {
-    margin-right: 20px;
-    color:  rgb(170,43,34);
-    text-decoration: none;
-    font-size: 18px;
-    font-family: 'VT323', monospace;
-    cursor: pointer;
-}
-
-.Horizontal>div .white{
-    /* margin-right: 20px; */
-    color:  white;
-    text-decoration: none;
-    font-size: 18px;
-    font-family: 'VT323', monospace;
-    cursor: pointer;
-}
-.Horizontal>a{
-    text-decoration: none;
-}
-
-@media screen and (max-width:900px){
-    .Horizontal{
-        background: rgb(190,190,184)
-    }
-
-    .toggler {
-        display: initial;
-    }
-
-    .desktop {
-        display: none;
-    }
-
-    .Horizontal{
-        justify-content: center;
-        height: 60px;
-    }
-    .toggler-header-container a,.headerbutton,.logout{
-        font-size: 15px;
-        margin: 0;
-        color: rgb(170,43,34);
-        margin-left: 6px;
-    }
-    .Horizontal img{
-        display: initial;
-        width: 20px;
-    }
-    .toggler-header-container .links{
-        position: fixed;
-        top: 60px;
-        transition: .3s;
-        opacity: 1;
-        transform: translate(0, 0px);
-        z-index: 9;
-    }
-    .toggler-header-container ul{
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        background: rgb(190,190,184);
-        width: 100vw;
-    }
-    .toggler-header-container li{
-        margin: 5px;
-    }
-    .toggler-header-container .logout{
-        margin-bottom: 8px;
-    }
-    .toggler-header-container .nonav {
-        position: fixed;
-        top: 60px;
-        opacity: 0;
-        transform: translate(0, -150px);
-        transition: .3s;
-        /* z-index: 9; */
-    }
-    .Horizontal>div a{
-        font-size: 15px;
-        margin-right: 5px;
-    }
-}
-

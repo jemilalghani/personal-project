@@ -1,22 +1,110 @@
-.LandingPage{
-    margin-top:100px;
-    flex:1; 
+.LandingPage {
+  margin-top: 100px;
+  flex: 1;
+  height: 100%;
 }
-.LandingPage img{
+/* .LandingPage img{
     position: absolute;
     width: 75%;
     margin: auto;
     left:50%;
     transform: translateX(-50%);
     top: 23%;
+} */
+.landing-footer {
+  margin-top: 50px;
+  height: 150px;
+  width: 100%;
+  background: rgb(129, 117, 109);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
-@media (max-width: 900px){
-    .LandingPage img{
-        width: 100%;
-    }
+.icon {
+  width: 20%;
+  height: 90%;
+  display: flex;
+  align-items: center;
 }
-@media screen and (max-width: 414px){
-    .LandingPage img{
-        width: 100%;
-    }
+.icon > p {
+  color: white;
+  margin: 0 0 0 10px;
+  font-family: "Staatliches", cursive;
+}
+.icon > img {
+  width: 30%;
+  margin: 0;
+  height: 70%;
+}
+.landing-mood {
+  width: 100%;
+  height: 200px;
+}
+.landing-mood > p {
+  font-family: "Staatliches", cursive;
+  margin: 50px 0 0 5px;
+  font-size: 25px;
+  /* text-decoration: underline; */
+}
+.landing-mood-container {
+  width: 55%;
+  /* height: 300px; */
+  /* background: blue; */
+  margin: auto;
+}
+.landing-mood-container > div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 40px;
+}
+.landing-mood-container > div p {
+  font-family: "Staatliches", cursive;
+}
+.mood-box {
+  width: 100px;
+  height: 50px;
+  margin-right: 50px;
+}
+.three {
+  border: solid 1px black;
+  margin: 0;
+  margin: 10px;
+}
+.one {
+  background: rgb(244, 172, 96);
+}
+.two {
+  background: rgb(86, 75, 99);
+}
+.landing-message {
+  width: 100%;
+  height: 520px;
+  background: rgb(67, 67, 67);
+  margin-top: 70px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.landing-message > p {
+  color: white;
+  font-family: "Staatliches", cursive;
+  font-size: 45px;
+}
+.footer-quote {
+  color: rgb(144, 3, 2);
+  font-family: "Staatliches", cursive;
+  text-align: center;
+  margin-bottom: 15px;
+}
+@media (max-width: 900px) {
+  .LandingPage img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 414px) {
+  .LandingPage img {
+    width: 100%;
+  }
 }

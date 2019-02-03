@@ -1,54 +1,79 @@
-.ColorBox{
-    height: 80px;
-    /* margin-top:10px; */
-    width: 100%
+.ColorBox {
+  height: 75px;
+  /* margin-top:10px; */
+  width: 100%;
 }
-.Emotions p{
-    display:none;
+.Emotions p {
+  display: none;
 }
-.Emotions .show{
-    display:flex;
-    justify-content: center;
-    font-family: 'VT323', monospace;
+.Emotions .show {
+  display: flex;
+  justify-content: center;
+  font-family: "Staatliches", cursive;
+  letter-spacing: 1px;
 }
-.themeOne{
-    max-width: 400px;
-    margin: 10px auto;
-    display: flex;
-    justify-content: space-between;
-  }
-.themeOne button{
-    border: none;
-    padding: 13px 25px;
-    color: white;
-    outline: none;
-    cursor: pointer;
+.themeOne {
+  max-width: 400px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
 }
-.themeOne #color-one{
-    background-color: rgb(245,181,107);
+.themeOne button {
+  border: none;
+  padding: 13px 25px;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  border-radius: 2px;
 }
-.themeOne #color-two{
-    background-color: rgb(220,108,120);
+.arrow {
+  height: 15px;
 }
-.themeOne #color-three{
-    background-color: rgb(67,89,148);
+.themeOne button:hover {
+  color: rgb(121, 0, 2);
+  /* box-shadow: rgb(211, 209, 207) 2px 2px 10px; */
+  box-shadow: rgba(194, 176, 176, 0.5) 1px 1px 10px;
+  font-weight: 600;
 }
-.themeOne #color-four{
-    background-color: rgb(165,100,120);
+.themeOne #color-one {
+  background-color: rgb(245, 181, 107);
 }
-.themeOne #color-five{
-    background-color: rgb(96,85,110);
+.themeOne #color-two {
+  background-color: rgb(220, 108, 120);
 }
-.themeOne #color-six{
-    background-color: rgb(170,43,34);
+.themeOne #color-three {
+  background-color: rgb(67, 89, 148);
 }
-.rainbowContainer{
-    width:100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 60px;
+.themeOne #color-four {
+  background-color: rgb(165, 100, 120);
 }
-#rainbow {
+.themeOne #color-five {
+  background-color: rgb(96, 85, 110);
+}
+.themeOne #color-six {
+  background-color: rgb(170, 43, 34);
+}
+.rainbowContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.rainbowContainer > button {
+  border: none;
+  font-family: "VT323", monospace;
+  font-size: 15px;
+  margin-left: 10px;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+  outline: none;
+}
+.rainbowContainer > button:hover {
+  transition: 0.4s ease-in-out;
+  margin-left: 0px;
+}
+/* #rainbow {
     animation: rainbow 3s infinite; 
     font-size: 18px;
     outline-color: aliceblue;
@@ -65,43 +90,50 @@
      60%{color: green;}
      100%{color: blue;}
      100%{color: orange;}	
- }
- 
- .popup{
-    position: absolute;
-    top:40%;
-    left:50%;
-    box-shadow: .3px .3px 5px rgba(0, 0, 0, 0.514);
-    background: rgba(1, 3, 24, 0.74);
-    border-radius: 5px;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    animation: fadeout 4s;
-    opacity: 0;
+ } */
+
+.popup {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  box-shadow: 0.3px 0.3px 5px rgba(0, 0, 0, 0.514);
+  background: rgba(1, 3, 24, 0.74);
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  animation: fadeout 4s;
+  opacity: 0;
 }
 
-@keyframes fadeout{
-    0%{opacity: 1;}
-    50%{opacity: 1;}
-    /* 80%{filter: blur(0px); border-radius: 0px;} */
-    100%{opacity: 0; display: none;}
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  /* 80%{filter: blur(0px); border-radius: 0px;} */
+  100% {
+    opacity: 0;
+    display: none;
+  }
 }
-.popupSuccess{
-    position: absolute;
-    top:30%;
-    left:42%;
+.popupSuccess {
+  position: absolute;
+  top: 30%;
+  left: 42%;
 }
-@media screen and (max-width: 600px){
-    .themeOne{
-        margin-top: 50px;
-        max-width: 250px;
-    }
-    .themeOne button{
-        padding: 5px 15px; 
-    }
+@media screen and (max-width: 600px) {
+  .themeOne {
+    margin-top: 50px;
+    max-width: 250px;
+  }
+  .themeOne button {
+    padding: 5px 15px;
+  }
 }
-@media screen and (max-width:500px){
-    .themeOne{
-        margin-top: 80px;
-    }
+@media screen and (max-width: 500px) {
+  .themeOne {
+    margin-top: 80px;
+  }
 }

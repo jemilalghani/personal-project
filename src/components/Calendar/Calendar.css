@@ -1,81 +1,81 @@
-.Calendar{
-    max-width: 700px;
+.Calendar {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.Calendar .box {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+  height: 512px;
+}
+.Calendar .box > div {
+  height: 20px;
+  width: 20px;
+  margin: 5px 5px;
+  border: solid rgba(128, 128, 128, 0.651) 1px;
+  box-shadow: 1px 1px rgba(128, 128, 128, 0.151);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Calendar .box img {
+  margin: 200px auto;
+}
+.Calendar .boxMonth {
+  display: none;
+}
+.popUpText {
+  width: 100px;
+  background-color: rgb(85, 85, 85);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 2px;
+  position: absolute;
+  z-index: 1;
+  font-size: 10px;
+  margin-top: 23px;
+}
+.popUpText::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #555 transparent;
+}
+
+@media screen and (max-width: 900px) {
+  .Calendar .box {
+    height: 600px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .Calendar .box {
+    height: 600px;
+  }
+}
+@media screen and (max-width: 820px) {
+  .Calendar .box {
+    display: none;
+  }
+  .Calendar .boxMonth img {
+    margin: 20px auto;
+  }
+  .Calendar .boxMonth {
     margin: 0 auto;
-}
-.Calendar .box{
-    max-width: 100%;
+    max-width: 70%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));  
-    height:512px;
-}
-.Calendar .box>div{
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+    height: 100px;
+  }
+  .Calendar .boxMonth > div {
     height: 20px;
     width: 20px;
     margin: 5px 5px;
     border: solid rgba(128, 128, 128, 0.651) 1px;
     box-shadow: 1px 1px rgba(128, 128, 128, 0.151);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
-  .Calendar .box img {
-      margin: 280px auto;
-  }
-  .Calendar .boxMonth{
-      display: none;
-  }
-.popUpText{
-    width: 100px;
-    background-color: rgb(85, 85, 85);
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px 2px;
-    position: absolute;
-    z-index: 1;
-    font-size:10px;
-    margin-top:23px;
 }
-.popUpText::after {
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent #555 transparent  ;
-}
-
-@media screen and (max-width:900px){
-        .Calendar .box{
-            height: 600px;
-        }
-    }  
-  @media screen and (max-width:800px){
-      .Calendar .box{
-          height: 600px;
-      }
-  }
-  @media screen and (max-width: 820px){
-      .Calendar .box{
-          display: none;
-      }
-      .Calendar .boxMonth img {
-        margin: 20px auto;
-    }
-      .Calendar .boxMonth{
-        margin: 0 auto;
-        max-width: 70%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));  
-        height:100px;
-      }
-      .Calendar .boxMonth>div{
-        height: 20px;
-        width: 20px;
-        margin: 5px 5px;
-        border: solid rgba(128, 128, 128, 0.651) 1px;
-        box-shadow: 1px 1px rgba(128, 128, 128, 0.151);
-      }
-  }

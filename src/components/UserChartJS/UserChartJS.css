@@ -1,43 +1,44 @@
-.chartjs-container2{
-    display: flex;
-    height: 150px;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    margin: 0 auto;
-    /* font-family: 'VT323', monospace; */
+.chartjs-container2 {
+  display: flex;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  margin: 0 auto;
+  color: rgb(138, 139, 139);
+  /* font-family: 'VT323', monospace; */
 }
 
-.weekUserButtons button>.show{
-    display: block;
+.weekUserButtons button > .show {
+  display: block;
 }
-.weekUserButtons button{
-    /* background: rgba(101, 101, 86, 0.6); */
-    border: none;
-    padding: 5px;
-    margin: 2px;
-    cursor: pointer;
-    /* color: white; */
-    outline: none;
-    font-family: 'VT323', monospace;
-    font-size: 15px;
-    display: flex;
+.weekUserButtons button {
+  /* background: rgba(101, 101, 86, 0.6); */
+  border: none;
+  padding: 4px;
+  margin: 1px;
+  cursor: pointer;
+  color: rgb(138, 139, 139);
+  outline: none;
+  font-family: "VT323", monospace;
+  font-size: 10px;
+  display: flex;
+  justify-content: space-between;
 }
-.weekUserButtons .highlighted button{
-    color: rgb(67,89,148);
+.weekUserButtons .highlighted button {
+  color: black;
 }
 .weekUserButtons {
-    margin: auto 200px;
+  margin: auto 200px;
 }
 
 @media (max-width: 900px) {
+  .weekUserButtons {
+    margin: 5px 0;
+  }
 
-    .weekUserButtons {
-        margin: 5px 0;
-    }
-
-    .chartjs-container2 {
-        margin-top: 230px;
-        flex-direction: column;
-    }
+  .chartjs-container2 {
+    margin-top: 230px;
+    flex-direction: column;
+  }
 }

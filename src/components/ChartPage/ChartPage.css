@@ -1,30 +1,39 @@
 .chartPage {
-    flex:1;
-    position: relative;
-    margin-top: 100px;
-    padding-bottom: 65px;
+  flex: 1;
+  position: relative;
+  margin-top: 100px;
+  padding-bottom: 65px;
+  min-height: calc(100vh - 100px);
+  /* display: flex; */
+  /* background: lavender; */
+}
+/* footer {
+  height: 100px;
+  width: 100%;
+  background: rgba(101, 101, 86, 0.425);
+  background: rgba(25, 59, 88, 0.856);
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 0;
+} */
+/* footer > div {
+  margin-top: 30px;
+  cursor: pointer;
+  font-family: "VT323", monospace;
+  color: rgb(170, 43, 34);
+} */
+.chartbutton {
+  font-family: "VT323", monospace;
+  text-align: center;
+  /* color: white; */
+  font-weight: 600;
+  color: rgb(144, 3, 2);
+  cursor: pointer;
+}
+@media screen and (max-width: 900px) {
+  .chartPage {
     min-height: calc(100vh - 100px);
-    /* background: lavender; */
-}
-footer{
-    height: 100px;
-    width:100%;
-    /* background: rgba(101, 101, 86, 0.425); */
-    background: rgba(25, 59, 88, 0.856);
-    display: flex;
-    justify-content: center;
-    align-self: flex-end;
-    position: absolute;
-    bottom:0;
-}
-footer>div{
-    margin-top: 30px;
-    cursor: pointer;
-    font-family: 'VT323', monospace;
-    color:  rgb(170,43,34);
-}
-@media screen and (max-width:900px){
-    .chartPage{
-        min-height: calc(100vh - 100px);
-    }
+  }
 }
