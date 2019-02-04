@@ -14,7 +14,7 @@
 .landing-footer {
   margin-top: 50px;
   height: 150px;
-  width: 100%;
+  width: 100vw;
   background: rgb(129, 117, 109);
   display: flex;
   justify-content: space-evenly;
@@ -37,7 +37,7 @@
   height: 70%;
 }
 .landing-mood {
-  width: 100%;
+  width: 100vw;
   height: 200px;
 }
 .landing-mood > p {
@@ -78,7 +78,7 @@
   background: rgb(86, 75, 99);
 }
 .landing-message {
-  width: 100%;
+  width: 100vw;
   height: 520px;
   background: rgb(67, 67, 67);
   margin-top: 70px;
@@ -98,13 +98,57 @@
   text-align: center;
   margin-bottom: 15px;
 }
-@media (max-width: 900px) {
+.landing-message > img {
+  width: 400px;
+  margin-left: 150px;
+}
+/* @media (max-width: 900px) {
   .LandingPage img {
-    width: 100%;
+    width: 100vw;
   }
 }
 @media screen and (max-width: 414px) {
   .LandingPage img {
-    width: 100%;
+    width: 100vw;
+  }
+} */
+@media screen and (max-width: 600px) {
+  .LandingPage {
+    overflow: hidden;
+  }
+  .landing-img {
+    width: 200%;
+  }
+  .landing-message > img {
+    margin-left: 0px;
+  }
+  .landing-message {
+    margin-top: 0px;
+    height: 400px;
+  }
+  .landing-message > p {
+    font-size: 35px;
+  }
+  .landing-footer {
+    margin-top: 20px;
+    height: 100px;
+  }
+  .icon {
+    width: 30%;
+  }
+  .icon > p {
+    font-size: 8px;
+  }
+  .landing-mood > p {
+    font-size: 18px;
+  }
+  .landing-mood-container > div p {
+    font-size: 10px;
+  }
+  .mood-box {
+    width: 60px;
+  }
+  #smalldiss {
+    display: none;
   }
 }

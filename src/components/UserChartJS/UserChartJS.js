@@ -40,6 +40,12 @@ class UserChartJS extends Component {
       }
     };
   }
+  async componentDidMount() {
+    await axios.get(`/api/pixals/${this.props.user.id}`).then(pixals => {
+      this.setState({ pixals: pixals.data });
+    });
+    this.dayOfWeek(Monday);
+  }
   getPixals() {
     axios.get(`/api/pixals/${this.props.user.id}`).then(pixals => {
       this.setState({ pixals: pixals.data });

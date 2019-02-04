@@ -24,6 +24,7 @@
   font-size: 10px;
   display: flex;
   justify-content: space-between;
+  background: none;
 }
 .weekUserButtons .highlighted button {
   color: black;

@@ -27,7 +27,7 @@ class Chart extends Component {
           <UserChartJS user={this.props.user} />
         ) : (
           <div className="chartbutton" onClick={this.toggle}>
-            view chart.
+            view personal chart.
           </div>
         )}
       </div>

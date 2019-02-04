@@ -47,7 +47,7 @@ class LandingPage extends Component {
               <div className="mood-box one" />
               <p> Joyful Happy Relaxed Great Content</p>
             </div>
-            <div>
+            <div id="smalldiss">
               <div className="mood-box two" />
               <p> Sad Lonely Insecure Numb</p>
             </div>
@@ -58,7 +58,7 @@ class LandingPage extends Component {
           <img
             src={message}
             alt=""
-            style={{ width: "400px", marginLeft: "150px" }}
+            // style={{ width: "400px"}}
           />
         </div>
         <p className="footer-quote">"MAKING RECORDS SHOULD BE FUN."</p>

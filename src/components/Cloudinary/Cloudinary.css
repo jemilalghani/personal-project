@@ -12,11 +12,11 @@
   flex-direction: row;
 }
 .clip {
-  height: 20px;
+  height: 15px;
   justify-content: flex-start;
 }
 .attach > div {
-  width: 100px;
+  width: 500px;
   display: flex;
   margin-left: 10px;
 }
@@ -26,11 +26,12 @@
   /* padding: 5px; */
 }
 .delete-icon {
-  height: 20px;
+  height: 15px;
   margin-left: 5px;
 }
 form {
   display: flex;
+  margin-bottom: 5px;
   /* justify-content: flex-end; */
 }
 form > button {
@@ -40,4 +41,13 @@ form > button {
   background: rgb(170, 43, 34);
   color: black;
   cursor: pointer;
+}
+@media screen and (max-width: 420px) {
+  .Cloudinary {
+    width: 300px;
+    /* margin: 3px 0 10px 20px; */
+  }
+  .attach {
+    width: 300px;
+  }
 }

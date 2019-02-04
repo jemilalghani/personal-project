@@ -62,7 +62,7 @@ class Feed extends Component {
         <div className="Write">
           {/* <div style={emotCircle} className="emotCircle" /> */}
           <textarea
-            placeholder="messages will not display without a finalized mood."
+            placeholder="Type Here (messages will not display without a finalized mood)"
             value={this.state.text}
             onChange={this.handleChange}
             className={this.state.color ? "red" : ""}

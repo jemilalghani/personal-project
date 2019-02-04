@@ -95,6 +95,12 @@ class ColorTheme extends Component {
     return (
       <div>
         <div className="ColorBox">
+          <p className="instructions" id="instruct-one">
+            scroll over colors to find your mood
+          </p>
+          <p className="instructions" id="instruct-two">
+            click colors once to find your mood and twice to select color
+          </p>
           <div className="themeOne">
             <button
               id="color-one"
@@ -148,27 +154,27 @@ class ColorTheme extends Component {
           <div className="Emotions">
             <p className={this.state.toggle1 ? "show" : ""}>
               {" "}
-              Joyful Happy Relaxed Great Content
+              1. Joyful Happy Relaxed Great Content
             </p>
             <p className={this.state.toggle2 ? "show" : ""}>
               {" "}
-              Productive Energetic Active Motivated
+              2. Productive Energetic Active Motivated
             </p>
             <p className={this.state.toggle3 ? "show" : ""}>
               {" "}
-              Average Normal Uneventful Good
+              3. Average Normal Uneventful Good
             </p>
             <p className={this.state.toggle4 ? "show" : ""}>
               {" "}
-              Sick Tired Lazy Bored Unmotivated
+              4. Sick Tired Lazy Bored Unmotivated
             </p>
             <p className={this.state.toggle5 ? "show" : ""}>
               {" "}
-              Sad Lonely Insecure Numb
+              5. Sad Lonely Insecure Numb
             </p>
             <p className={this.state.toggle6 ? "show" : ""}>
               {" "}
-              Angry Anxious Frustrated Grumpy
+              6. Angry Anxious Frustrated Grumpy
             </p>
           </div>
         </div>

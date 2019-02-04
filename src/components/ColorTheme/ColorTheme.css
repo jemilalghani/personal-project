@@ -5,6 +5,8 @@
 }
 .Emotions p {
   display: none;
+  font-family: "Staatliches", cursive;
+  letter-spacing: 1px;
 }
 .Emotions .show {
   display: flex;
@@ -53,12 +55,19 @@
 .themeOne #color-six {
   background-color: rgb(170, 43, 34);
 }
+.instructions {
+  font-size: 10px;
+  text-align: center;
+  font-family: "VT323", monospace;
+  color: rgb(58, 50, 66);
+}
 .rainbowContainer {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
+  margin-top: 15px;
 }
 .rainbowContainer > button {
   border: none;
@@ -68,6 +77,7 @@
   transition: 0.4s ease-in-out;
   cursor: pointer;
   outline: none;
+  background: none;
 }
 .rainbowContainer > button:hover {
   transition: 0.4s ease-in-out;
@@ -91,7 +101,9 @@
      100%{color: blue;}
      100%{color: orange;}	
  } */
-
+#instruct-two {
+  display: none;
+}
 .popup {
   position: absolute;
   top: 40%;
@@ -123,17 +135,26 @@
   top: 30%;
   left: 42%;
 }
+@media screen and (max-width: 1030px) {
+  .rainbowContainer > button:hover {
+    transition: 0.4s ease-in-out;
+    margin-left: 10px;
+  }
+  #instruct-one {
+    display: none;
+  }
+  #instruct-two {
+    display: inherit;
+  }
+}
 @media screen and (max-width: 600px) {
+  .ColorBox {
+    margin-top: 60px;
+  }
   .themeOne {
-    margin-top: 50px;
     max-width: 250px;
   }
   .themeOne button {
     padding: 5px 15px;
-  }
-}
-@media screen and (max-width: 500px) {
-  .themeOne {
-    margin-top: 80px;
   }
 }

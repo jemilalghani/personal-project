@@ -1,5 +1,5 @@
 .Horizontal {
-  width: 100%;
+  width: 100vw;
   height: 60px;
   margin-bottom: 10px;
   position: fixed;
@@ -97,7 +97,7 @@ a {
   text-decoration: none;
 }
 
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 900px) {
   .Horizontal {
     background: rgb(190, 190, 184);
   }
@@ -153,10 +153,10 @@ a {
     opacity: 0;
     transform: translate(0, -150px);
     transition: 0.3s;
-    /* z-index: 9; */
+    z-index: 9;
   }
   .Horizontal > div a {
     font-size: 15px;
     margin-right: 5px;
   }
-}
+} */

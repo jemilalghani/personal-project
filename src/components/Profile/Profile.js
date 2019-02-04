@@ -35,10 +35,16 @@ class Profile extends Component {
     });
   }
   email() {
-    alert("Email Sent");
-    this.props.user &&
-      Axios.post("/api/email", { email: this.props.user.email }).then(() => {});
-    this.setState({ toggle: false });
+    let value = window.confirm(
+      `send welcome email to ${this.props.user.email}`
+    );
+    if (value) {
+      this.props.user &&
+        Axios.post("/api/email", { email: this.props.user.email }).then(
+          () => {}
+        );
+      this.setState({ toggle: false });
+    }
   }
   saveUpdate() {
     if (this.state.text.length) {

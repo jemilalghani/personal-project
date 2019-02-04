@@ -32,7 +32,7 @@ class Header extends Component {
     this.props.history.push("/");
   }
   componentWillMount() {
-    document.addEventListener("touchend", this.handleClick, false);
+    // document.addEventListener("touchend", this.handleClick, false);
     // document.addEventListener('click', this.handleClick, false)
   }
   handleClick = e => {
@@ -66,7 +66,7 @@ class Header extends Component {
     ) : this.props.pathname !== "/" ? (
       <div
         className="toggler-header-container"
-        ref={node => (this.node = node)}
+        // ref={node => (this.node = node)}
       >
         <div className="Horizontal">
           {user ? (
@@ -86,16 +86,16 @@ class Header extends Component {
           />
           <div className="desktop">
             <ul>
+              <Link id="linktoo" to="/chart">
+                <li className={this.props.pathname === "/chart" ? "white" : ""}>
+                  Calendar
+                </li>
+              </Link>
               <Link id="linktoo" to="/profile">
                 <li
                   className={this.props.pathname === "/profile" ? "white" : ""}
                 >
-                  Profile
-                </li>
-              </Link>
-              <Link id="linktoo" to="/chart">
-                <li className={this.props.pathname === "/chart" ? "white" : ""}>
-                  Calendar
+                  Diary
                 </li>
               </Link>
               <Link id="linktoo" to="/history">
