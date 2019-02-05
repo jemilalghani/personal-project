@@ -56,9 +56,6 @@ class Profile extends Component {
           this.componentDidMount();
         });
     }
-    // else {
-    //   this.setState({ buttonClick: false });
-    // }
   }
   handleChange(e) {
     this.setState({ text: e.target.value });
@@ -121,23 +118,8 @@ class Profile extends Component {
                 </div>
               </div>
             )}
-            {/* <div className="editsaveButton">
-              <button onClick={this.changeButton}>Edit</button>
-              <button
-                className={this.state.buttonClick ? "" : "none"}
-                onClick={this.saveUpdate}
-              >
-                Save
-              </button>
-            </div> */}
           </div>
         </div>
-        {/* <div className={this.state.buttonClick ? "inputNewName" : "none"}>
-          <input
-            onChange={this.handleChange}
-            placeholder="  Please input new display name"
-          />
-        </div> */}
       </div>
     );
   }

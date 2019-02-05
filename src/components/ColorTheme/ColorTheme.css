@@ -1,6 +1,5 @@
 .ColorBox {
   height: 75px;
-  /* margin-top:10px; */
   width: 100%;
 }
 .Emotions p {
@@ -33,7 +32,6 @@
 }
 .themeOne button:hover {
   color: rgb(121, 0, 2);
-  /* box-shadow: rgb(211, 209, 207) 2px 2px 10px; */
   box-shadow: rgba(194, 176, 176, 0.5) 1px 1px 10px;
   font-weight: 600;
 }
@@ -83,24 +81,6 @@
   transition: 0.4s ease-in-out;
   margin-left: 0px;
 }
-/* #rainbow {
-    animation: rainbow 3s infinite; 
-    font-size: 18px;
-    outline-color: aliceblue;
-    border: .5px solid rgba(199, 199, 199, 0.411);
-    font-family: 'VT323', monospace;
-    font-weight: 500;
-    padding:5px;
- }
- @keyframes rainbow{
-   0%{color: orange;}	
-   10%{color: purple;}	
-     20%{color: red;}
-     40%{color: yellow;}
-     60%{color: green;}
-     100%{color: blue;}
-     100%{color: orange;}	
- } */
 #instruct-two {
   display: none;
 }
@@ -124,7 +104,6 @@
   50% {
     opacity: 1;
   }
-  /* 80%{filter: blur(0px); border-radius: 0px;} */
   100% {
     opacity: 0;
     display: none;

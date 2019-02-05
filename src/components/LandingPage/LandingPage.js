@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import LandingCal from "../LandingCal/LandingCal";
-import LandingColorTheme from "../ColorTheme/LandingColorTheme";
-import ChartJS from "../ChartJS/ChartJS";
 import "./LandingPage.css";
 import banner from "./Repeat Grid 1.svg";
 import fill from "./paint-bucket (1).svg";
@@ -55,11 +52,7 @@ class LandingPage extends Component {
         </div>
         <div className="landing-message">
           <p>Treat Me Like A Diary.</p>
-          <img
-            src={message}
-            alt=""
-            // style={{ width: "400px"}}
-          />
+          <img src={message} alt="" />
         </div>
         <p className="footer-quote">"MAKING RECORDS SHOULD BE FUN."</p>
       </div>

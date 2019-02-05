@@ -31,16 +31,16 @@ class Header extends Component {
     sessionStorage.clear();
     this.props.history.push("/");
   }
-  componentWillMount() {
-    // document.addEventListener("touchend", this.handleClick, false);
-    // document.addEventListener('click', this.handleClick, false)
-  }
-  handleClick = e => {
-    if (this.node.contains(e.target)) {
-      return;
-    }
-    this.setState({ toggle: false });
-  };
+  // componentWillMount() {
+  //   document.addEventListener("touchend", this.handleClick, false);
+  //   document.addEventListener('click', this.handleClick, false)
+  // }
+  // handleClick = e => {
+  //   if (this.node.contains(e.target)) {
+  //     return;
+  //   }
+  //   this.setState({ toggle: false });
+  // };
   email() {
     alert("Email Sent");
     this.props.user &&
@@ -64,10 +64,7 @@ class Header extends Component {
         </Link>
       </div>
     ) : this.props.pathname !== "/" ? (
-      <div
-        className="toggler-header-container"
-        // ref={node => (this.node = node)}
-      >
+      <div className="toggler-header-container">
         <div className="Horizontal">
           {user ? (
             <Link to="/chart">
@@ -113,25 +110,6 @@ class Header extends Component {
               </li>
             </ul>
           </div>
-        </div>
-
-        <div className={this.state.toggle ? "toggler links" : "toggler nonav"}>
-          <ul>
-            <Link to="/profile">
-              <li onClick={this.toggle}>Profile</li>
-            </Link>
-            <Link to="/chart">
-              <li onClick={this.toggle}>Calendar</li>
-            </Link>
-            <Link to="/history">
-              <li onClick={this.toggle}>History</li>
-            </Link>
-            <li>
-              <div className="logout" onClick={() => this.logout()}>
-                Logout
-              </div>
-            </li>
-          </ul>
         </div>
       </div>
     ) : (

@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import Profile from "../Profile/Profile";
-import Feed from "../Feed/Feed";
 import "./ProfilePage.css";
 import ChatWindow from "../ChartWindow/ChatWindow";
 import { userMessage } from "../../ducks/reducer";
 import Axios from "axios";
 import { connect } from "react-redux";
 import reload from "./reload.svg";
-// import moment from 'moment';
 
 class ProfilePage extends Component {
   constructor() {
@@ -17,7 +15,6 @@ class ProfilePage extends Component {
         "Yesterday is not ours to recover, but tomorrow is ours to win or lose.",
       text: ""
     };
-    // this.getMessages = this.getMessages.bind(this);
     this.getMessage = this.getMessage.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
   }
@@ -49,14 +46,13 @@ class ProfilePage extends Component {
         <div>
           <Profile />
           <div className="quotes">
-            <p>{this.state.quote}</p>
+            <p>"{this.state.quote}"</p>
             {!this.state.disable && (
               <img src={reload} alt="" onClick={() => this.getQuote()} />
             )}
           </div>
         </div>
         <div className="PandF-Child">
-          {/* <Feed getMessages={this.getMessage} /> */}
           {this.props.user && (
             <ChatWindow
               getMessages={this.getMessage}

@@ -197,7 +197,6 @@ class ColorTheme extends Component {
         <div className="rainbowContainer">
           <img src={arrow} alt="" className="arrow" />
           <button
-            // id="rainbow"
             onClick={() => this.postColor()}
             disabled={!this.state.buttonOn}
           >

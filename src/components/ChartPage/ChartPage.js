@@ -22,7 +22,6 @@ class Chart extends Component {
       <div className="chartPage">
         {this.props.user ? <Calendar /> : ""}
         <ColorTheme />
-        {/* <br /> */}
         {this.state.toggle ? (
           <UserChartJS user={this.props.user} />
         ) : (

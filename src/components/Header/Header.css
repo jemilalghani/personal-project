@@ -6,19 +6,13 @@
   top: 0px;
   background: white;
   padding-bottom: 40px;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* background: rgba(101, 101, 86, 0.425); */
   z-index: 10;
-  /* text-align: center; */
 }
 
 .toggler-header-container > a,
 #linktoo {
   margin-right: 30px;
   color: rgb(112, 112, 112);
-  /* margin: auto; */
   text-decoration: none;
   font-size: 15px;
   font-family: "VT323", monospace;
@@ -26,16 +20,13 @@
 }
 .logout {
   color: rgb(112, 112, 112);
-  /* margin: auto; */
   text-decoration: none;
   font-size: 15px;
   font-family: "VT323", monospace;
   cursor: pointer;
 }
 a {
-  /* margin-right: 10px; */
   color: rgb(112, 112, 112);
-  /* margin: auto; */
   text-decoration: none;
   font-size: 15px;
   font-family: "VT323", monospace;
@@ -44,7 +35,6 @@ a {
 .Horizontal h1 {
   font-family: "VT323", monospace;
   margin-top: 10px;
-  /* margin-left: 10px; */
   color: rgb(112, 112, 112);
   text-decoration: none;
   font-size: 60px;
@@ -86,7 +76,6 @@ a {
   background: white;
 }
 .Horizontal > div .white {
-  /* margin-right: 20px; */
   color: black;
   text-decoration: none;
   font-size: 15px;
@@ -96,67 +85,3 @@ a {
 .Horizontal > a {
   text-decoration: none;
 }
-
-/* @media screen and (max-width: 900px) {
-  .Horizontal {
-    background: rgb(190, 190, 184);
-  }
-
-  .toggler {
-    display: initial;
-  }
-
-  .desktop {
-    display: none;
-  }
-
-  .Horizontal {
-    justify-content: center;
-    height: 60px;
-  }
-  .toggler-header-container a,
-  .headerbutton,
-  .logout {
-    font-size: 15px;
-    margin: 0;
-    color: rgb(170, 43, 34);
-    margin-left: 6px;
-  }
-  .Horizontal img {
-    display: initial;
-    width: 20px;
-  }
-  .toggler-header-container .links {
-    position: fixed;
-    top: 60px;
-    transition: 0.3s;
-    opacity: 1;
-    transform: translate(0, 0px);
-    z-index: 9;
-  }
-  .toggler-header-container ul {
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    background: rgb(190, 190, 184);
-    width: 100vw;
-  }
-  .toggler-header-container li {
-    margin: 5px;
-  }
-  .toggler-header-container .logout {
-    margin-bottom: 8px;
-  }
-  .toggler-header-container .nonav {
-    position: fixed;
-    top: 60px;
-    opacity: 0;
-    transform: translate(0, -150px);
-    transition: 0.3s;
-    z-index: 9;
-  }
-  .Horizontal > div a {
-    font-size: 15px;
-    margin-right: 5px;
-  }
-} */

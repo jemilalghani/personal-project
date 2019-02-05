@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import "./Feed.css";
 import { connect } from "react-redux";
-import Cloudinary from "../Cloudinary/Cloudinary";
 import moment from "moment";
 import Axios from "axios";
-import ChatWindow from "../ChartWindow/ChatWindow";
 
 class Feed extends Component {
   constructor() {
@@ -24,7 +22,6 @@ class Feed extends Component {
   }
   handleChange(event) {
     this.setState({ text: event.target.value });
-    // console.log(this.state.text.length);
     this.wordCount();
   }
   clearTextArea() {
@@ -48,19 +45,9 @@ class Feed extends Component {
     });
   }
   render() {
-    // const emotCircle = {
-    //   background: sessionStorage.getItem("color") || this.props.color
-    // };
     return (
       <div className="Feed">
-        {/* {this.props.user && (
-          <ChatWindow
-            getMessages={this.props.getMessages}
-            userId={this.props.user.id}
-          />
-        )} */}
         <div className="Write">
-          {/* <div style={emotCircle} className="emotCircle" /> */}
           <textarea
             placeholder="Type Here (messages will not display without a finalized mood)"
             value={this.state.text}
@@ -71,7 +58,6 @@ class Feed extends Component {
             Post
           </button>
         </div>
-        {/* <Cloudinary /> */}
       </div>
     );
   }
