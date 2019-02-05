@@ -44,8 +44,8 @@
     height: 400px;
   }
 }
-@media screen and (max-height: 800px) {
+@media screen and (max-height: 700px) {
   .chat-container {
-    height: 90px;
+    height: 80px;
   }
 }
