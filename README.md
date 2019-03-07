@@ -2,7 +2,7 @@
 
 ### Background
 
-Yearly is a daily mood tracker JS application. Users will be able to post a color indicative of their mood once a day and post messages to their private diary.
+Yearly is a daily mood tracker web application. Users will be able to post a color indicative of their mood once a day and post messages to their private diary.
 
 As they post colors, users will be able to view their personal chart. The chart displays how many times a user picks a color each day of the week.
 
