@@ -1,44 +1,126 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Yearly
 
-## Available Scripts
+### Background
 
-In the project directory, you can run:
+Yearly is a daily mood tracker JS application. Users will be able to post a color indicative of their mood once a day and post messages to their private diary.
 
-### `npm start`
+As they post colors, users will be able to view their personal chart. The chart displays how many times a user picks a color each day of the week.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Check out the live version [here](https://www.pixelate.top/)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Technology Overview
 
-### `npm test`
+I built Yearly in less than two weeks; and, it was my first full stack web application. I used PostgreSQL, Node, Express and Massive to manage the backend. In order to manage state and the frontend, I used ReactJS/Redux, as well as CSS3 for frontend styling. Additionally, I used Auth 0, bcrypt, Cloudinary, Nodemailer and ChartJS.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Grid of Colors (Moods)
+Each user gets a grid of 366 boxes for each day of the year, including leap year. A user's previously selected colors, located in my database, gets put into state under this.state.pixalColors. 
+Once in state, I map an array of length 366 and return 366 divs with appropiate information from this.state.pixalColors. <br>
 
-### `npm run build`
+In other words, at index 1 of the array I
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. check whether or not pixalColors has a date, January 1st, and the current year. If so, I return the index of that date and use that information to inline style the corresponding div.
+2. check whether or not January 1st is today, also in respect to year. If so, the user's selected color will be put into redux and the corresponding div styled by props from redux. 
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+**Note that, each div has a popup that inidicates what day of the year the div is representing.**
+![Alt](./popupYearly.png "popup")
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The code below is the **phone display** of the user chart. Instead of showing all 366 days of the year, it show the current month. Also, the phone display does not have popups. 
 
-### `npm run eject`
+```
+let displayMonth =
+      this.state.pixalColors &&
+      arrayTwo.map(item => {
+        if (
+          this.state.pixalColors.findIndex(e => {
+            return (
+              e.date.substring(0, 4) == moment().format("YYYY") &&
+              moment(e.date).dayOfYear() === item
+            );
+          }) !== -1
+        ) {
+          let index = this.state.pixalColors.findIndex(e => {
+            return (
+              e.date.substring(0, 4) == moment().format("YYYY") &&
+              moment(e.date).dayOfYear() === item
+            );
+          });
+          return (
+            <div
+              style={{ background: `${this.state.pixalColors[index].mood}` }}
+              className={`day-${item}`}
+            >
+              {" "}
+            </div>
+          );
+        } else if (item === moment().dayOfYear()) {
+          return <div style={currentDay} className={`day-${item}`} />;
+        } else {
+          return (
+            <div style={{ background: "white" }} className={`day-${item}`} />
+          );
+        }
+      });
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Personal Chart
+Here is a breakdown for the personal chart _when the user clicks on Monday_. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Alt](./personalChart.png "popup")
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This is how I dynamically input data into ChartJS. Like above, I am pulling the user's previously selected colors from the database. Once the user clicks on Monday, checkDatabase is ran which gives back the user's selected colors for only Mondays. Then pushToDataSet is ran with the colors for only Mondays and gives back a dataset filtered and counted by color. Lastly, everytime a user clicks a day of the week a clear function is ran. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**code below**
 
-## Learn More
+```
+<button onClick={() => this.dayOfWeek(Monday)}
+ style={{ color: this.state.day === Monday && "black" }}>
+Monday
+</button>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+checkDatabase(daySelected) {
+    if (this.state.pixals) {
+      for (let i = 0; i < this.state.pixals.length; i++) {
+        let date = moment(this.state.pixals[i].date).format("dddd");
+        date === daySelected[0] && daySelected.push(this.state.pixals[i].mood);
+      }
+      if (daySelected.length > 1) {
+        this.pushToDataSet(daySelected);
+      }
+    }
+  }
+  clear() {
+    const barData = { ...this.state.barData };
+    dataset = [];
+    barData.datasets[0].data = dataset;
+    this.setState({ barData });
+  }
+  dayOfWeek(day) {
+    this.clear();
+    this.getPixals();
+    this.checkDatabase(day);
+    this.setState({ day });
+  }
+  pushToDataSet(day) {
+    dataset.push(day.filter(item => item === "rgb(245,181,107)").length);
+    dataset.push(day.filter(item => item === "rgb(220,108,120)").length);
+    dataset.push(day.filter(item => item === "rgb(67,89,148)").length);
+    dataset.push(day.filter(item => item === "rgb(165,100,120)").length);
+    dataset.push(day.filter(item => item === "rgb(96,85,110)").length);
+    dataset.push(day.filter(item => item === "rgb(170,43,34)").length);
+  }
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Diary Page 
+![Alt](./diaryPage.png "popup")
+**points of interest**
+
+a. The refresh icon triggers a quote of the day external api.<br>
+b. The paperclip icon triggers Cloudinary so that you might include an image in your posts. <br>
+c. (not displayed above) A mail icon triggers nodemailer and sends a welcome image to the email in the database for the user. <br>
+d. (not displayed above) The user is allowed to edit/change their username. 
+
+### WireFrame with Adobe XD
+![Alt](./wire.png "popup")
+
+### Future Implements
+I plan to add a section, History, for previous years, where grids from the previous two years will be displayed. I would also love to make this pwa so that I can have push notifcations. 
